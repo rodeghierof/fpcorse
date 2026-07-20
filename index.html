@@ -368,39 +368,7 @@
             transform: translateY(-3px);
         }
 
-        /* Hero stats */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hero-stats .stat-item {
-            text-align: center;
-        }
-
-        .hero-stats .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 2.2rem;
-            background: linear-gradient(135deg, #ff6a00, #ffaa00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .hero-stats .stat-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #aaa;
-            font-weight: 500;
-            margin-top: 2px;
-        }
+        
 
         /* Hero visual (moto) */
         .hero-visual {
@@ -684,9 +652,7 @@
                 justify-content: center;
             }
 
-            .hero-stats {
-                justify-items: center;
-            }
+
 
 
 
@@ -728,14 +694,6 @@
                 font-size: clamp(2.2rem, 8vw, 3.2rem);
             }
 
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .hero-stats .stat-number {
-                font-size: 1.6rem;
-            }
 
 
             .section {
@@ -786,11 +744,6 @@
             .hero {
                 padding: 7rem 0 2rem;
                 min-height: 92vh;
-            }
-
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
             }
 
             .gallery-card .card-overlay h3 {
@@ -847,25 +800,6 @@
                     <a href="Calendario.html" class="btn-secondary">
                         <i class="fas fa-calendar-alt"></i> Calendario
                     </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="16">0</div>
-                        <div class="stat-label">Stagioni</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="34">0</div>
-                        <div class="stat-label">Piloti cresciuti</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="12">0</div>
-                        <div class="stat-label">Podî</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="3">0</div>
-                        <div class="stat-label">Titoli</div>
-                    </div>
                 </div>
             </div>
 
@@ -971,41 +905,7 @@
             }
         });
 
-        // — Statistiche animazione contatore
-        const stats = document.querySelectorAll('.stat-number');
-
-        const animateCounter = (el) => {
-            const target = parseInt(el.getAttribute('data-count'));
-            const duration = 1800;
-            const step = Math.max(1, Math.floor(target / 50));
-            let current = 0;
-
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    el.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    el.textContent = current;
-                }
-            }, duration / 50);
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    if (!el.classList.contains('counted')) {
-                        el.classList.add('counted');
-                        animateCounter(el);
-                    }
-                }
-            });
-        }, { threshold: 0.4 });
-
-        stats.forEach(stat => observer.observe(stat));
-
-        // — Gallery card click
+                // — Gallery card click
         document.querySelectorAll('.gallery-card').forEach(card => {
             card.addEventListener('click', () => {
                 const href = card.getAttribute('data-href');
