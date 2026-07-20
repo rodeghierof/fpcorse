@@ -10,10 +10,12 @@
 .u-section-1 .u-text-1 {
   font-family: Angkor;
   font-weight: 700;
+  font-size: 6rem;
   margin: 303px auto 0 0;
 }
 
 .u-section-1 .u-text-2 {
+  font-size: 1.5rem;
   margin: 15px 314px 60px 0;
 }
 
@@ -29,7 +31,6 @@
 
   .u-section-1 .u-text-2 {
     margin-right: 114px;
-    font-size: 1.5rem;
   }
 }
 
@@ -55,11 +56,12 @@
 
 @media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 239px;
+    min-height: 417px;
   }
 
   .u-section-1 .u-text-1 {
     font-size: 1.875rem;
+    margin-top: 83px;
   }
 
   .u-section-1 .u-text-2 {
@@ -145,10 +147,16 @@
 
 @media (max-width: 575px) {
    .u-section-2 {
-    min-height: 317px;
+    min-height: 606px;
   }
 
   .u-section-2 .u-gallery-1 {
-    height: 1182px;
+    height: 441px;
+    margin-top: 0;
+  }
+
+  .u-section-2 .u-social-icons-1 {
+    margin-top: 92px;
+    margin-bottom: 25px;
   }
 }
