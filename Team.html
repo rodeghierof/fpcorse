@@ -439,97 +439,114 @@
             z-index: 2;
         }
 
-        /* Sezione Piloti (Dario) */
-        .pilot-section {
+        /* Sezione Piloti */
+        .pilots-section {
             margin-top: 2rem;
-            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .pilot-card {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 24px;
+            padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.06);
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2.5rem;
-            align-items: center;
             transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
-        .pilot-section:hover {
-            border-color: rgba(230, 57, 0, 0.15);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        .pilot-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(230, 57, 0, 0.2);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
         }
 
-        .pilot-section .pilot-image {
-            border-radius: 20px;
+        .pilot-card .pilot-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.2rem;
+            border: 3px solid rgba(230, 57, 0, 0.2);
+            transition: all 0.4s ease;
+            flex-shrink: 0;
         }
 
-        .pilot-section .pilot-image img {
+        .pilot-card:hover .pilot-image {
+            border-color: #ff6a00;
+            box-shadow: 0 0 30px rgba(230, 57, 0, 0.15);
+        }
+
+        .pilot-card .pilot-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            aspect-ratio: 4 / 3;
             transition: transform 0.5s ease;
         }
 
-        .pilot-section:hover .pilot-image img {
-            transform: scale(1.02);
+        .pilot-card:hover .pilot-image img {
+            transform: scale(1.05);
         }
 
-        .pilot-section .pilot-info .badge-pilot {
+        .pilot-card .pilot-badge {
             display: inline-block;
             font-family: 'Orbitron', sans-serif;
             font-weight: 600;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #ff6a00;
             background: rgba(230, 57, 0, 0.1);
-            padding: 0.2rem 1.2rem;
+            padding: 0.2rem 1rem;
             border-radius: 50px;
-            border: 1px solid rgba(230, 57, 0, 0.15);
-            margin-bottom: 0.6rem;
+            border: 1px solid rgba(230, 57, 0, 0.12);
+            margin-bottom: 0.4rem;
         }
 
-        .pilot-section .pilot-info h2 {
+        .pilot-card h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 0.2rem;
         }
 
-        .pilot-section .pilot-info .pilot-role {
+        .pilot-card .pilot-class {
             font-size: 1rem;
             color: #ff6a00;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
-        .pilot-section .pilot-info p {
+        .pilot-card p {
             color: #bbb;
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.7;
+            max-width: 400px;
         }
 
-        .pilot-section .pilot-info .pilot-stats {
+        .pilot-card .pilot-stats {
             display: flex;
-            gap: 2rem;
-            margin-top: 1.2rem;
-            padding-top: 1rem;
+            gap: 1.5rem;
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
+            width: 100%;
+            justify-content: center;
         }
 
-        .pilot-section .pilot-info .pilot-stats span {
-            font-size: 0.85rem;
+        .pilot-card .pilot-stats span {
+            font-size: 0.8rem;
             color: #999;
         }
 
-        .pilot-section .pilot-info .pilot-stats strong {
+        .pilot-card .pilot-stats strong {
             color: #fff;
             font-weight: 700;
-            font-size: 1.1rem;
         }
 
         /* Sezione Hospitality */
@@ -690,19 +707,18 @@
                 gap: 1.2rem;
             }
 
-            .pilot-section {
+            .pilots-section {
                 grid-template-columns: 1fr;
-                padding: 1.8rem;
                 gap: 1.5rem;
             }
 
-            .pilot-section .pilot-info h2 {
-                font-size: 1.8rem;
+            .pilot-card .pilot-image {
+                width: 120px;
+                height: 120px;
             }
 
-            .pilot-section .pilot-info .pilot-stats {
-                flex-wrap: wrap;
-                gap: 1rem;
+            .pilot-card h3 {
+                font-size: 1.4rem;
             }
 
             .hospitality-section {
@@ -743,12 +759,17 @@
                 padding: 1.4rem 1.2rem;
             }
 
-            .pilot-section {
-                padding: 1.2rem;
+            .pilot-card {
+                padding: 1.5rem;
             }
 
-            .pilot-section .pilot-info h2 {
-                font-size: 1.5rem;
+            .pilot-card .pilot-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .pilot-card h3 {
+                font-size: 1.2rem;
             }
 
             .hospitality-section {
@@ -830,6 +851,13 @@
                 </div>
 
                 <div class="staff-card">
+                    <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Luca Rodeghiero</h3>
+                    <div class="role">Jolly</div>
+                    <p>Figura polivalente, supporto in tutte le aree del team.</p>
+                </div>
+
+                <div class="staff-card">
                     <div class="avatar"><i class="fas fa-wrench"></i></div>
                     <h3>Oscar Nalin</h3>
                     <div class="role">Meccanico</div>
@@ -837,10 +865,10 @@
                 </div>
 
                 <div class="staff-card">
-                    <div class="avatar"><i class="fas fa-wrench"></i></div>
+                    <div class="avatar"><i class="fas fa-tools"></i></div>
                     <h3>Filippo Verlato</h3>
                     <div class="role">Meccanico</div>
-                    <p>Assemblaggio e messa a punto delle moto in pista.</p>
+                    <p>Assemblaggio e cura dei dettagli tecnici delle moto.</p>
                 </div>
 
                 <div class="staff-card">
@@ -851,26 +879,47 @@
                 </div>
             </div>
 
-            <!-- PILOTA -->
-            <div class="pilot-section">
-                <div class="pilot-image">
-                    <img src="images/WhatsAppImage2024-06-01at10.42.53AM.jpeg" alt="Dario Scibilia" loading="lazy" />
-                </div>
-                <div class="pilot-info">
-                    <span class="badge-pilot">Pilota ufficiale</span>
-                    <h2>Dario Scibilia</h2>
-                    <div class="pilot-role">Italo-Belga · Classe Ohvale 110</div>
+            <!-- PILOTI -->
+            <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 700; margin: 3rem 0 1.5rem; text-align: center; letter-spacing: 1px;">
+                I nostri <span class="highlight" style="background: linear-gradient(135deg, #ff6a00, #e63900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">piloti</span>
+            </h2>
+
+            <div class="pilots-section">
+                <!-- Dario Scibilia - 160 -->
+                <div class="pilot-card">
+                    <div class="pilot-image">
+                        <img src="images/WhatsAppImage2024-06-01at10.42.53AM.jpeg" alt="Dario Scibilia" loading="lazy" />
+                    </div>
+                    <span class="pilot-badge">Pilota ufficiale</span>
+                    <h3>Dario Scibilia</h3>
+                    <div class="pilot-class">Classe 160</div>
                     <p>
-                        <strong>Dario Scibilia</strong> è un pilota italo-belga di 10 anni. Nonostante la distanza dal Belgio,
-                        partecipa al Campionato Italiano Velocità Junior FMI nella categoria Ohvale 110cc.
-                        Nel 2023 ha ottenuto un secondo e un terzo posto nel Campionato Nazionale Velocità Motoasi 110,
-                        e come wild card ha conquistato un nono posto nel CIV Junior.
-                        La stagione 2024 è iniziata con due primi posti al primo weekend di gara.
-                        Punta ad imparare e a sfruttare ogni occasione per portare a casa il miglior risultato.
+                        Pilota italo-belga di grande talento. Nel 2023 ha ottenuto un secondo e un terzo posto
+                        nel Campionato Nazionale Velocità Motoasi 110. Nel 2024 ha esordito nel CIV Junior con
+                        due vittorie al primo weekend. Punta a crescere e a portare a casa i migliori risultati.
                     </p>
                     <div class="pilot-stats">
                         <span><strong>2023</strong> · 2° e 3° posto Motoasi 110</span>
-                        <span><strong>2024</strong> · 2 vittorie al debutto CIV Junior</span>
+                        <span><strong>2024</strong> · 2 vittorie al debutto CIV</span>
+                    </div>
+                </div>
+
+                <!-- Christian Bianchi - 190 -->
+                <div class="pilot-card">
+                    <div class="pilot-image">
+                        <img src="images/WhatsAppImage2026-07-20at12.56.49.jpeg" alt="Christian Bianchi" loading="lazy" />
+                    </div>
+                    <span class="pilot-badge">Pilota ufficiale</span>
+                    <h3>Christian Bianchi</h3>
+                    <div class="pilot-class">Classe 190</div>
+                    <p>
+                        Protagonista nel gruppo di testa della FIM MotoMini Italy Series OHVALE 190.
+                        Nel 2026 è tra i piloti di punta del team FP Corse, con prestazioni di alto livello
+                        e battaglie al fotofinish in ogni round.
+                    </p>
+                    <div class="pilot-stats">
+                        <span><strong>2025</strong> · Top 5 CIV Junior 190</span>
+                        <span><strong>2026</strong> · Protagonista in ogni round</span>
                     </div>
                 </div>
             </div>
@@ -880,7 +929,7 @@
                 <div class="icon-box"><i class="fas fa-campground"></i></div>
                 <h3>Hospitality <span style="color:#ff6a00;">FP Corse</span></h3>
                 <p>
-                    Come ogni stagione, il team dispone di una struttura hospitality dove il pilota, la famiglia
+                    Come ogni stagione, il team dispone di una struttura hospitality dove i piloti, le famiglie
                     e i tecnici possono trovare un ambiente sereno e familiare per i momenti conviviali e di relax.
                     Un vero e proprio quartier generale in ogni circuito.
                 </p>
@@ -942,7 +991,7 @@
 
         // — Scroll reveal (fade-in)
         const revealElements = document.querySelectorAll(
-            '.staff-card, .pilot-section, .hospitality-section'
+            '.staff-card, .pilot-card, .hospitality-section'
         );
 
         const revealObserver = new IntersectionObserver((entries) => {
@@ -963,7 +1012,7 @@
 
         // Forza primo caricamento elementi visibili
         setTimeout(() => {
-            document.querySelectorAll('.staff-card, .pilot-section, .hospitality-section').forEach(el => {
+            document.querySelectorAll('.staff-card, .pilot-card, .hospitality-section').forEach(el => {
                 if (el.getBoundingClientRect().top < window.innerHeight) {
                     el.style.opacity = '1';
                     el.style.transform = 'translateY(0)';
