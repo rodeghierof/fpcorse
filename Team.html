@@ -181,26 +181,6 @@
             transform: scale(1.05);
         }
 
-        .logo-text {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #ff6a00, #e63900);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-        }
-
-        .logo-text small {
-            font-size: 0.55rem;
-            letter-spacing: 3px;
-            -webkit-text-fill-color: #888;
-            background: none;
-            display: inline-block;
-            margin-left: 2px;
-        }
 
         .nav-links {
             display: flex;
@@ -350,7 +330,7 @@
         /* Staff grid */
         .staff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
             margin-bottom: 3.5rem;
         }
@@ -358,7 +338,7 @@
         .staff-card {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 20px;
-            padding: 1.8rem 1.5rem;
+            padding: 1.8rem 1.2rem;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.4s ease;
@@ -391,17 +371,17 @@
         }
 
         .staff-card .avatar {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
             background: linear-gradient(135deg, #ff6a00, #e63900);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 0.8rem;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #fff;
             box-shadow: 0 8px 30px rgba(230, 57, 0, 0.2);
             position: relative;
@@ -409,20 +389,20 @@
         }
 
         .staff-card .avatar i {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: rgba(255, 255, 255, 0.9);
         }
 
         .staff-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
             position: relative;
             z-index: 2;
         }
 
         .staff-card .role {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #ff6a00;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -433,13 +413,13 @@
 
         .staff-card p {
             color: #aaa;
-            font-size: 0.9rem;
-            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
             position: relative;
             z-index: 2;
         }
 
-        /* Sezione Piloti */
+        /* Sezione Piloti - stessa importanza */
         .pilots-section {
             margin-top: 2rem;
             display: grid;
@@ -450,7 +430,7 @@
         .pilot-card {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 24px;
-            padding: 2rem;
+            padding: 2rem 2rem 1.8rem;
             border: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.4s ease;
             display: flex;
@@ -466,14 +446,15 @@
         }
 
         .pilot-card .pilot-image {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 1.2rem;
             border: 3px solid rgba(230, 57, 0, 0.2);
             transition: all 0.4s ease;
             flex-shrink: 0;
+            background: #1a1a1a;
         }
 
         .pilot-card:hover .pilot-image {
@@ -504,13 +485,14 @@
             padding: 0.2rem 1rem;
             border-radius: 50px;
             border: 1px solid rgba(230, 57, 0, 0.12);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
 
         .pilot-card h3 {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
+            margin-bottom: 0.1rem;
         }
 
         .pilot-card .pilot-class {
@@ -537,6 +519,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.06);
             width: 100%;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .pilot-card .pilot-stats span {
@@ -687,9 +670,6 @@
                 flex-wrap: wrap;
             }
 
-            .logo-text {
-                font-size: 1.2rem;
-            }
             .logo-wrap img {
                 height: 38px;
             }
@@ -713,8 +693,8 @@
             }
 
             .pilot-card .pilot-image {
-                width: 120px;
-                height: 120px;
+                width: 130px;
+                height: 130px;
             }
 
             .pilot-card h3 {
@@ -764,8 +744,8 @@
             }
 
             .pilot-card .pilot-image {
-                width: 100px;
-                height: 100px;
+                width: 110px;
+                height: 110px;
             }
 
             .pilot-card h3 {
@@ -798,7 +778,6 @@
                 <a href="./">
                     <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse" />
                 </a>
-                <span class="logo-text">FP <small>CORSE</small></span>
             </div>
 
             <ul class="nav-links" id="navLinks">
@@ -879,7 +858,7 @@
                 </div>
             </div>
 
-            <!-- PILOTI -->
+            <!-- PILOTI - STESSA IMPORTANZA -->
             <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 700; margin: 3rem 0 1.5rem; text-align: center; letter-spacing: 1px;">
                 I nostri <span class="highlight" style="background: linear-gradient(135deg, #ff6a00, #e63900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">piloti</span>
             </h2>
@@ -888,15 +867,13 @@
                 <!-- Dario Scibilia - 160 -->
                 <div class="pilot-card">
                     <div class="pilot-image">
-                        <img src="images/WhatsAppImage2024-06-01at10.42.53AM.jpeg" alt="Dario Scibilia" loading="lazy" />
+                        <img src="images/fotoDario.jpeg" alt="Dario Scibilia" loading="lazy" />
                     </div>
                     <span class="pilot-badge">Pilota ufficiale</span>
                     <h3>Dario Scibilia</h3>
                     <div class="pilot-class">Classe 160</div>
                     <p>
-                        Pilota italo-belga di grande talento. Nel 2023 ha ottenuto un secondo e un terzo posto
-                        nel Campionato Nazionale Velocità Motoasi 110. Nel 2024 ha esordito nel CIV Junior con
-                        due vittorie al primo weekend. Punta a crescere e a portare a casa i migliori risultati.
+                        Pilota italo-belga con noi dal 2024
                     </p>
                     <div class="pilot-stats">
                         <span><strong>2023</strong> · 2° e 3° posto Motoasi 110</span>
@@ -907,15 +884,13 @@
                 <!-- Christian Bianchi - 190 -->
                 <div class="pilot-card">
                     <div class="pilot-image">
-                        <img src="images/WhatsAppImage2026-07-20at12.56.49.jpeg" alt="Christian Bianchi" loading="lazy" />
+                        <img src="images/fotoChristian.jpeg" alt="Christian Bianchi" loading="lazy" />
                     </div>
                     <span class="pilot-badge">Pilota ufficiale</span>
                     <h3>Christian Bianchi</h3>
                     <div class="pilot-class">Classe 190</div>
                     <p>
-                        Protagonista nel gruppo di testa della FIM MotoMini Italy Series OHVALE 190.
-                        Nel 2026 è tra i piloti di punta del team FP Corse, con prestazioni di alto livello
-                        e battaglie al fotofinish in ogni round.
+                        Partecipa per il secondo anno alla FIM MotoMini Italy Series OHVALE 190.
                     </p>
                     <div class="pilot-stats">
                         <span><strong>2025</strong> · Top 5 CIV Junior 190</span>
