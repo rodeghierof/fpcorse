@@ -1,1085 +1,136 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FP Corse — A caccia di talenti</title>
-    <meta name="description" content="FP Corse - Squadra corse moto velocità. Dal 2009 nel mondo del motorsport." />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" />
-
-    <style>
-        /* ========== RESET & BASE ========== */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background: #0a0a0a;
-            color: #f0f0f0;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* ========== SCROLLBAR ========== */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #e63900;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #cc3300;
-        }
-
-        /* ========== NAVBAR ========== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            background: rgba(10, 10, 10, 0.72);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(230, 57, 0, 0.15);
-            transition: all 0.35s ease;
-        }
-
-        .navbar.scrolled {
-            background: rgba(10, 10, 10, 0.92);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
-        }
-
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .logo-wrap {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .logo-wrap img {
-            height: 48px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-wrap img:hover {
-            transform: scale(1.05);
-        }
-
-
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.2rem;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            color: #b0b0b0;
-            transition: color 0.3s ease, transform 0.2s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #ff6a00, #e63900);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #fff;
-            transform: translateY(-1px);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a.active {
-            color: #fff;
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-links .btn-cta {
-            background: linear-gradient(135deg, #ff6a00, #e63900);
-            color: #fff !important;
-            padding: 0.5rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 24px rgba(230, 57, 0, 0.3);
-        }
-
-        .nav-links .btn-cta::after {
-            display: none;
-        }
-
-        .nav-links .btn-cta:hover {
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 8px 36px rgba(230, 57, 0, 0.5);
-            color: #fff !important;
-        }
-
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 4px;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: #f0f0f0;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
-
-        /* ========== HERO CON SFONDO IMMAGINE ========== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 0 4rem;
-            position: relative;
-            background-image: url('images/WhatsAppImage2026-07-20at12.56.49.jpeg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
-
-        /* Overlay scuro per leggibilità */
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 1;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content .badge {
-            display: inline-block;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 600;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            color: #ff6a00;
-            background: rgba(230, 57, 0, 0.15);
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            border: 1px solid rgba(230, 57, 0, 0.2);
-            text-transform: uppercase;
-            margin-bottom: 1.2rem;
-        }
-
-        .hero-content h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: clamp(2.8rem, 7vw, 5.2rem);
-            line-height: 1.05;
-            text-transform: uppercase;
-            margin-bottom: 0.3rem;
-            color: #fff;
-        }
-
-        .hero-content h1 .highlight {
-            background: linear-gradient(135deg, #ff6a00, #e63900, #ff6a00);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 4s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .hero-content .subtitle {
-            font-size: 1.25rem;
-            font-weight: 300;
-            color: #d0d0d0;
-            max-width: 500px;
-            margin: 1rem 0 2rem;
-            line-height: 1.7;
-        }
-
-        .hero-content .subtitle strong {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            align-items: center;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.9rem 2.6rem;
-            background: linear-gradient(135deg, #ff6a00, #e63900);
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 30px rgba(230, 57, 0, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 44px rgba(230, 57, 0, 0.5);
-        }
-
-        .btn-primary i {
-            transition: transform 0.3s ease;
-        }
-
-        .btn-primary:hover i {
-            transform: translateX(6px);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.9rem 2.2rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            color: #fff;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .btn-secondary:hover {
-            border-color: #ff6a00;
-            background: rgba(230, 57, 0, 0.15);
-            transform: translateY(-3px);
-        }
-
-        /* Hero stats */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hero-stats .stat-item {
-            text-align: center;
-        }
-
-        .hero-stats .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 2.2rem;
-            background: linear-gradient(135deg, #ff6a00, #ffaa00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .hero-stats .stat-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #aaa;
-            font-weight: 500;
-            margin-top: 2px;
-        }
-
-        /* Hero visual (moto) */
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-visual .glow-ring {
-            width: 420px;
-            height: 420px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(230, 57, 0, 0.15) 0%, transparent 70%);
-            position: absolute;
-            animation: pulseGlow 4.5s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.12);
-                opacity: 0.9;
-            }
-        }
-
-        .hero-visual .moto-icon {
-            font-size: 13rem;
-            color: rgba(255, 255, 255, 0.06);
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 0 80px rgba(230, 57, 0, 0.12);
-            animation: floatMoto 6s ease-in-out infinite;
-            user-select: none;
-        }
-
-        @keyframes floatMoto {
-            0%,
-            100% {
-                transform: translateY(0) rotate(-3deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(3deg);
-            }
-        }
-
-        .hero-visual .track-rings {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            border: 1px solid rgba(230, 57, 0, 0.06);
-            animation: spinRing 35s linear infinite;
-        }
-
-        .hero-visual .track-rings::after {
-            content: '';
-            position: absolute;
-            inset: 30px;
-            border-radius: 50%;
-            border: 1px solid rgba(230, 57, 0, 0.04);
-            animation: spinRing 25s linear infinite reverse;
-        }
-
-        @keyframes spinRing {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* ========== GALLERY / STAGIONI ========== */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-header .tag {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 600;
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #ff6a00;
-            background: rgba(230, 57, 0, 0.08);
-            padding: 0.3rem 1.2rem;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 0.6rem;
-            border: 1px solid rgba(230, 57, 0, 0.1);
-        }
-
-        .section-header h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: clamp(2rem, 3.5vw, 3rem);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-header h2 .highlight {
-            background: linear-gradient(135deg, #ff6a00, #e63900);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-header p {
-            color: #999;
-            max-width: 600px;
-            margin: 0.6rem auto 0;
-            font-size: 1.05rem;
-        }
-
-        /* Gallery grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .gallery-card {
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.45s ease;
-            cursor: pointer;
-            aspect-ratio: 4 / 3;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(230, 57, 0, 0.25);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .gallery-card .card-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .gallery-card:hover .card-image {
-            transform: scale(1.04);
-        }
-
-        .gallery-card .card-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem 1.8rem 1.8rem;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
-            transition: all 0.4s ease;
-        }
-
-        .gallery-card .card-overlay h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .gallery-card .card-overlay p {
-            font-size: 0.95rem;
-            color: #ccc;
-            margin-top: 0.2rem;
-            font-weight: 400;
-        }
-
-        .gallery-card .card-overlay .year-badge {
-            display: inline-block;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 600;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: #ff6a00;
-            background: rgba(230, 57, 0, 0.15);
-            padding: 0.2rem 1rem;
-            border-radius: 50px;
-            border: 1px solid rgba(230, 57, 0, 0.15);
-            margin-bottom: 0.4rem;
-        }
-
-        /* ========== SOCIAL BAR ========== */
-        .social-bar {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 2.5rem 0 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 3rem;
-        }
-
-        .social-bar a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            color: #aaa;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-bar a:hover {
-            background: rgba(230, 57, 0, 0.12);
-            border-color: rgba(230, 57, 0, 0.25);
-            color: #ff6a00;
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(230, 57, 0, 0.15);
-        }
-
-        /* ========== FOOTER ========== */
-        .footer {
-            padding: 2.5rem 0 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 1.5rem;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .footer .footer-brand {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #ff6a00, #e63900);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
-            margin-bottom: 0.4rem;
-        }
-
-        .footer .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 0.6rem 0 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        .footer .footer-links a {
-            color: #888;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.3s ease;
-        }
-
-        .footer .footer-links a:hover {
-            color: #ff6a00;
-        }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 1024px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .hero-content .subtitle {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-actions {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                justify-items: center;
-            }
-
-            .hero-visual .moto-icon {
-                font-size: 10rem;
-            }
-
-            .hero-visual .glow-ring {
-                width: 320px;
-                height: 320px;
-            }
-
-            .nav-links {
-                gap: 1.4rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                padding: 1.8rem 0;
-                gap: 1.2rem;
-                background: rgba(10, 10, 10, 0.96);
-                backdrop-filter: blur(18px);
-                -webkit-backdrop-filter: blur(18px);
-                border-top: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .navbar .container {
-                flex-wrap: wrap;
-            }
-
-            .logo-wrap img {
-                height: 38px;
-            }
-
-            .hero-content h1 {
-                font-size: clamp(2.2rem, 8vw, 3.2rem);
-            }
-
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .hero-stats .stat-number {
-                font-size: 1.6rem;
-            }
-
-            .hero-visual .moto-icon {
-                font-size: 7rem;
-            }
-
-            .hero-visual .glow-ring {
-                width: 240px;
-                height: 240px;
-            }
-
-            .section {
-                padding: 3rem 0;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .gallery-card {
-                aspect-ratio: 4 / 3;
-            }
-
-            .social-bar {
-                gap: 1.2rem;
-                padding: 2rem 0 0.5rem;
-            }
-
-            .social-bar a {
-                width: 46px;
-                height: 46px;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1.2rem;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .hero-actions .btn-primary,
-            .hero-actions .btn-secondary {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .hero {
-                padding: 7rem 0 2rem;
-                min-height: 92vh;
-            }
-
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-            }
-
-            .gallery-card .card-overlay h3 {
-                font-size: 1.6rem;
-            }
-
-            .footer .footer-links {
-                gap: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="logo-wrap">
-                <a href="./">
-                    <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse" />
-                </a>
-            </div>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="./" class="active">Home</a></li>
-                <li><a href="Calendario.html">Calendario</a></li>
-                <li><a href="Team.html">Team</a></li>
-                <li><a href="Stagione-2026.html">Stagione 2026</a></li>
-                <li><a href="#contatti" class="btn-cta">Contatti</a></li>
-            </ul>
-
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<html style="font-size: 16px;" lang="it"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Sample Headline">
+    <meta name="description" content="Squadra corse moto velocità">
+    <title>FP Corse</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 8.5.1, nicepage.com">
+    <meta property="og:title" content="FP Corse">
+    <meta property="og:description" content="Squadra corse moto velocità">
+    <meta property="og:image" content="images/logofpcorsefoto.png">
+    <meta property="og:url" content="fpcorse.infinityfreeapp.com">
+    <link rel="icon" href="images/favicon.png">
+    
+    
+    
+    
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Angkor:wght@400&amp;family=ADLaM+Display:wght@400">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "FP Corse",
+		"logo": "images/logofpcorsetagliomaglia.png",
+		"sameAs": [
+				"https://www.facebook.com/profile.php?id=100090754430561",
+				"https://www.instagram.com/fpcorse/"
+		]
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="it"><header class="u-align-center-sm u-align-center-xs u-clearfix u-grey-80 u-header u-sticky u-sticky-bc27 u-header" id="sec-9dbe"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="http://fpcorse.infinityfreeapp.com/" class="u-image u-logo u-image-1" data-image-width="4000" data-image-height="1417">
+          <img src="images/logofpcorsetagliomaglia.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <div class="u-social-icons u-social-icons-1">
+          <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100090754430561"><span class="u-icon u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-03f4"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-03f4"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
+      c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
+          </a>
+          <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/fpcorse/"><span class="u-icon u-social-icon u-social-instagram u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e6ca"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-e6ca"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
+      z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
+      C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
+      c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
+          </a>
         </div>
-    </nav>
-
-    <!-- ===== HERO CON SFONDO IMMAGINE ===== -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="badge">Dal 2009 nel motorsport</div>
-                <h1>A caccia di <br /><span class="highlight">talenti</span></h1>
-                <p class="subtitle">
-                    <strong>FP Corse</strong> è una squadra italiana dedicata alla crescita dei giovani piloti.
-                    Passione, velocità e determinazione: il nostro motore.
-                </p>
-                <div class="hero-actions">
-                    <a href="Team.html" class="btn-primary">
-                        Scopri il team <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="Calendario.html" class="btn-secondary">
-                        <i class="fas fa-calendar-alt"></i> Calendario
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="16">0</div>
-                        <div class="stat-label">Stagioni</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="34">0</div>
-                        <div class="stat-label">Piloti cresciuti</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="12">0</div>
-                        <div class="stat-label">Podî</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="3">0</div>
-                        <div class="stat-label">Titoli</div>
-                    </div>
-                </div>
+        <nav class="u-align-left u-menu u-menu-one-level u-offcanvas u-menu-1" role="navigation" aria-label="Menu navigation">
+          <div class="menu-collapse" style="font-size: 1rem;">
+            <a class="u-button-style u-custom-active-color u-custom-color u-custom-text-color u-hamburger-link u-nav-link u-text-black" href="#" tabindex="-1" aria-label="Open menu" aria-controls="8cbf">
+              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-8a8f"></use></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-8a8f" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;" xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1" role="menubar"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-2-base u-nav-link-2" href="./">Home</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-2-base u-nav-link-2" href="Calendario.html">Calendario</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-2-base u-nav-link-2" href="Team.html">Team</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-2-base u-nav-link-2" href="Stagione-2026.html">Stagione 2026</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse" id="8cbf" role="region" aria-label="Menu panel">
+            <div class="u-align-center u-black u-container-align-center u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2" role="menubar"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="./">Home</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Calendario.html">Calendario</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Team.html">Team</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Stagione-2026.html">Stagione 2026</a>
+</li></ul>
+              </div>
             </div>
-
-            <div class="hero-visual">
-                <div class="glow-ring"></div>
-                <div class="track-rings"></div>
-                <div class="moto-icon">🏍️</div>
-            </div>
-        </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-align-left u-clearfix u-container-align-left u-image u-shading u-section-1" id="block-4" data-image-width="1600" data-image-height="1200">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+        <h1 class="u-align-left u-custom-font u-text u-text-default u-title u-text-1">A caccia di talenti </h1>
+        <p class="u-align-left u-custom-font u-font-courier-new u-large-text u-text u-text-variant u-text-2">Dal 2009 nel mondo del motorsport. </p>
+      </div>
     </section>
-
-    <!-- ===== GALLERY / STAGIONI ===== -->
-    <section class="section" id="stagioni">
-        <div class="container">
-            <div class="section-header">
-                <div class="tag">Le nostre stagioni</div>
-                <h2>I <span class="highlight">percorsi</span> di crescita</h2>
-                <p>Ogni anno una nuova sfida. Dai primi passi in pista fino ai traguardi più importanti.</p>
+    <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-grey-80 u-section-2" id="sec-f344">
+      <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-always u-gallery-1">
+        <div class="u-gallery-inner u-gallery-inner-1">
+          <div class="u-effect-hover-zoom u-gallery-item">
+            <div class="u-back-slide" data-image-width="1600" data-image-height="1200">
+              <img class="u-back-image u-expanded" src="images/WhatsAppImage2026-07-20at12.56.49.jpeg" alt="2026">
             </div>
-
-            <div class="gallery-grid">
-                <!-- 2026 -->
-                <div class="gallery-card" data-href="Stagione-2026.html">
-                    <img class="card-image" src="images/WhatsAppImage2026-07-20at12.56.49.jpeg" alt="Stagione 2026" loading="lazy" />
-                    <div class="card-overlay">
-                        <span class="year-badge">Stagione 2026</span>
-                        <h3>2026</h3>
-                        <p>CIV Junior · Motomini 190 &amp; 160</p>
-                    </div>
-                </div>
-
-                <!-- 2025 -->
-                <div class="gallery-card" data-href="#">
-                    <img class="card-image" src="images/fotodario2025.jpeg" alt="Stagione 2025" loading="lazy" />
-                    <div class="card-overlay">
-                        <span class="year-badge">Stagione 2025</span>
-                        <h3>2025</h3>
-                        <p>CIV Junior · Minigp Italy Series 160</p>
-                    </div>
-                </div>
-
-                <!-- 2024 -->
-                <div class="gallery-card" data-href="foto-2024.html">
-                    <img class="card-image" src="images/IMG_6076.JPG" alt="Stagione 2024" loading="lazy" />
-                    <div class="card-overlay">
-                        <span class="year-badge">Stagione 2024</span>
-                        <h3>2024</h3>
-                        <p>CIV Junior · Ohvale 110</p>
-                    </div>
-                </div>
+            <div class="u-container-align-left u-over-slide u-shading u-valign-middle-xl u-over-slide-1">
+              <h3 class="u-align-left u-custom-font u-gallery-heading" style="margin-left: 0px; margin-right: auto; font-size: 3.75rem; font-family: &quot;ADLaM Display&quot;;">2026</h3>
+              <p class="u-align-left u-gallery-text" style="margin-left: 0px; margin-right: auto;">Civ junior Motomini 190&amp;160</p>
             </div>
-
-            <!-- Social Bar -->
-            <div class="social-bar">
-                <a href="https://www.facebook.com/profile.php?id=100090754430561" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/fpcorse/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
+          </div>
+          <div class="u-effect-hover-zoom u-gallery-item">
+            <div class="u-back-slide" data-image-width="800" data-image-height="533">
+              <img class="u-back-image u-expanded" src="images/fotodario2025.jpeg" alt="2025">
             </div>
+            <div class="u-container-align-left u-over-slide u-shading u-valign-middle-xl u-over-slide-2">
+              <h3 class="u-align-left u-custom-font u-gallery-heading" style="margin-left: 0px; margin-right: auto; font-size: 3.75rem; font-family: &quot;ADLaM Display&quot;;">2025</h3>
+              <p class="u-align-left u-gallery-text" style="margin-left: 0px; margin-right: auto;">Civ junior Minigp Italy series 160</p>
+            </div>
+          </div>
+          <div class="u-effect-hover-zoom u-gallery-item" data-href="foto-2024.html" data-page-id="70391370" title="foto 2024">
+            <div class="u-back-slide" data-image-width="800" data-image-height="533">
+              <img class="u-back-image u-expanded" src="images/IMG_6076.JPG" alt="2024">
+            </div>
+            <div class="u-container-align-left u-over-slide u-shading u-valign-middle-xl u-over-slide-3">
+              <h3 class="u-align-left u-custom-font u-gallery-heading" style="margin-left: 0px; margin-right: auto; font-size: 3.75rem; font-family: &quot;ADLaM Display&quot;;">2024</h3>
+              <p class="u-align-left u-gallery-text" style="margin-left: 0px; margin-right: auto;">Civ Junior Ohvale 110</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="u-social-icons u-social-icons-1">
+        <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100090754430561"><span class="u-icon u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0fef"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-0fef"><path fill="currentColor" d="M75.5,28.8H65.4c-1.5,0-4,0.9-4,4.3v9.4h13.9l-1.5,15.8H61.4v45.1H42.8V58.3h-8.8V42.4h8.8V32.2
+c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
+        </a>
+        <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/fpcorse/"><span class="u-icon u-social-icon u-social-instagram u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a6ce"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a6ce"><path fill="currentColor" d="M55.9,32.9c-12.8,0-23.2,10.4-23.2,23.2s10.4,23.2,23.2,23.2s23.2-10.4,23.2-23.2S68.7,32.9,55.9,32.9z
+	 M55.9,69.4c-7.4,0-13.3-6-13.3-13.3c-0.1-7.4,6-13.3,13.3-13.3s13.3,6,13.3,13.3C69.3,63.5,63.3,69.4,55.9,69.4z"></path><path fill="#FFFFFF" d="M79.7,26.8c-3,0-5.4,2.5-5.4,5.4s2.5,5.4,5.4,5.4c3,0,5.4-2.5,5.4-5.4S82.7,26.8,79.7,26.8z"></path><path fill="currentColor" d="M78.2,11H33.5C21,11,10.8,21.3,10.8,33.7v44.7c0,12.6,10.2,22.8,22.7,22.8h44.7c12.6,0,22.7-10.2,22.7-22.7
+	V33.7C100.8,21.1,90.6,11,78.2,11z M91,78.4c0,7.1-5.8,12.8-12.8,12.8H33.5c-7.1,0-12.8-5.8-12.8-12.8V33.7
+	c0-7.1,5.8-12.8,12.8-12.8h44.7c7.1,0,12.8,5.8,12.8,12.8V78.4z"></path></svg></span>
+        </a>
+      </div>
     </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer" id="contatti">
-        <div class="container">
-            <span class="footer-brand">FP Corse</span>
-            <div class="footer-links">
-                <a href="./">Home</a>
-                <a href="Calendario.html">Calendario</a>
-                <a href="Team.html">Team</a>
-                <a href="Stagione-2026.html">Stagione 2026</a>
-            </div>
-            <p>&copy; 2026 FP Corse. Tutti i diritti riservati.</p>
-        </div>
-    </footer>
-
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
-        // — Hamburger toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('open');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('open');
-            });
-        });
-
-        // — Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 60) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // — Statistiche animazione contatore
-        const stats = document.querySelectorAll('.stat-number');
-
-        const animateCounter = (el) => {
-            const target = parseInt(el.getAttribute('data-count'));
-            const duration = 1800;
-            const step = Math.max(1, Math.floor(target / 50));
-            let current = 0;
-
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    el.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    el.textContent = current;
-                }
-            }, duration / 50);
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    if (!el.classList.contains('counted')) {
-                        el.classList.add('counted');
-                        animateCounter(el);
-                    }
-                }
-            });
-        }, { threshold: 0.4 });
-
-        stats.forEach(stat => observer.observe(stat));
-
-        // — Gallery card click
-        document.querySelectorAll('.gallery-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const href = card.getAttribute('data-href');
-                if (href && href !== '#') {
-                    window.location.href = href;
-                }
-            });
-        });
-
-        // — Scroll reveal (fade-in)
-        const revealElements = document.querySelectorAll(
-            '.gallery-card, .hero-content, .hero-visual, .social-bar'
-        );
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.08 });
-
-        revealElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-            revealObserver.observe(el);
-        });
-
-        // Forza primo caricamento elementi visibili
-        setTimeout(() => {
-            document.querySelectorAll('.gallery-card, .hero-content, .hero-visual, .social-bar').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight) {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                }
-            });
-        }, 250);
-
-        // — Evita il refresh della home page su link Home (se già in home)
-        document.querySelectorAll('.nav-links a[href="./"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-62b1"><div class="u-clearfix u-sheet u-sheet-1"></div></footer>
+    <section class="u-backlink u-clearfix u-grey-80"> This <a href="https://nicepage.com/css-templates">CSS Template</a> was created with Nicepage Website Builder 
+    </section>
+  
+</body></html>
