@@ -3,8 +3,93 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendario 2026 — FP Corse</title>
-    <meta name="description" content="Calendario gare 2026 CIV Junior di FP Corse" />
+    <title>Calendario CIV Junior 2026 – FP Corse</title>
+    <meta name="description" content="Tutte le gare del CIV Junior 2026: date, circuiti e risultati di Dario Scibilia e Christian Bianchi. Scopri il calendario di FP Corse." />
+    <meta name="keywords" content="Calendario CIV Junior 2026, FP Corse, gare moto, Magione, Modena, Viterbo, Varano" />
+    <link rel="canonical" href="https://rodeghierof.github.io/fpcorse/Calendario.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calendario CIV Junior 2026 – FP Corse" />
+    <meta property="og:description" content="Tutte le gare del CIV Junior 2026: date, circuiti e risultati di Dario Scibilia e Christian Bianchi." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rodeghierof.github.io/fpcorse/Calendario.html" />
+    <meta property="og:image" content="https://rodeghierof.github.io/fpcorse/images/logofpcorsetagliomaglia.png" />
+
+    <!-- Schema markup per il calendario (eventi) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Calendario CIV Junior 2026",
+            "description": "Elenco delle gare del CIV Junior 2026 a cui partecipa FP Corse.",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Event",
+                    "name": "Round 1 CIV Junior - Magione",
+                    "startDate": "2026-05-24",
+                    "location": {
+                        "@type": "Place",
+                        "name": "Autodromo dell'Umbria",
+                        "address": "Magione, Italia"
+                    }
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Event",
+                    "name": "Round 2 CIV Junior - Modena",
+                    "startDate": "2026-06-21",
+                    "location": {
+                        "@type": "Place",
+                        "name": "Autodromo di Modena",
+                        "address": "Modena, Italia"
+                    }
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "Event",
+                    "name": "Round 3 CIV Junior - Viterbo",
+                    "startDate": "2026-08-02",
+                    "location": {
+                        "@type": "Place",
+                        "name": "Autodromo di Viterbo",
+                        "address": "Viterbo, Italia"
+                    }
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "Event",
+                    "name": "Round 4 CIV Junior - Modena",
+                    "startDate": "2026-08-30",
+                    "location": {
+                        "@type": "Place",
+                        "name": "Autodromo di Modena",
+                        "address": "Modena, Italia"
+                    }
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "Event",
+                    "name": "Round 5 CIV Junior - Varano",
+                    "startDate": "2026-09-27",
+                    "location": {
+                        "@type": "Place",
+                        "name": "Autodromo di Varano",
+                        "address": "Varano de' Melegari, Italia"
+                    }
+                }
+            }]
+        }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +103,7 @@
     <link rel="icon" href="images/favicon.png" />
 
     <style>
-        /* ========== RESET & BASE ========== */
+        /* (stile identico alla versione già ottimizzata, solo aggiunti heading) */
         *,
         *::before,
         *::after {
@@ -44,11 +129,9 @@
             text-decoration: none;
             color: inherit;
         }
-
         ul {
             list-style: none;
         }
-
         img {
             max-width: 100%;
             display: block;
@@ -60,7 +143,6 @@
             padding: 0 2rem;
         }
 
-        /* ========== SCROLLBAR (solo desktop) ========== */
         @media (min-width: 768px) {
             ::-webkit-scrollbar {
                 width: 8px;
@@ -77,7 +159,7 @@
             }
         }
 
-        /* ========== NAVBAR ========== */
+        /* NAVBAR identica alla home */
         .navbar {
             position: fixed;
             top: 0;
@@ -89,35 +171,29 @@
             border-bottom: 1px solid rgba(230, 57, 0, 0.15);
             transition: background 0.3s ease;
         }
-
         .navbar.scrolled {
             background: rgba(10, 10, 10, 0.96);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
         }
-
         .navbar .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
         }
-
         .logo-wrap {
             display: flex;
             align-items: center;
         }
-
         .logo-wrap img {
             height: 42px;
             width: auto;
         }
-
         .nav-links {
             display: flex;
             align-items: center;
             gap: 1.8rem;
         }
-
         .nav-links a {
             font-weight: 600;
             font-size: 0.85rem;
@@ -127,7 +203,6 @@
             transition: color 0.3s ease;
             position: relative;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -138,20 +213,16 @@
             background: linear-gradient(90deg, #ff6a00, #e63900);
             transition: width 0.3s ease;
         }
-
         .nav-links a:hover {
             color: #fff;
         }
-
         .nav-links a:hover::after,
         .nav-links a.active::after {
             width: 100%;
         }
-
         .nav-links a.active {
             color: #fff;
         }
-
         .nav-links .btn-cta {
             background: linear-gradient(135deg, #ff6a00, #e63900);
             color: #fff !important;
@@ -161,18 +232,15 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 24px rgba(230, 57, 0, 0.3);
         }
-
         .nav-links .btn-cta::after {
             display: none;
         }
-
         .nav-links .btn-cta:hover {
             transform: scale(1.04);
             box-shadow: 0 8px 36px rgba(230, 57, 0, 0.5);
             color: #fff !important;
         }
 
-        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -181,7 +249,6 @@
             padding: 4px;
             z-index: 1001;
         }
-
         .hamburger span {
             display: block;
             width: 28px;
@@ -190,26 +257,22 @@
             border-radius: 4px;
             transition: all 0.3s ease;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* ========== PAGE HEADER ========== */
+        /* PAGE HEADER */
         .page-header {
             padding: 8rem 0 2.5rem;
             text-align: center;
             position: relative;
         }
-
         .page-header .tag {
             display: inline-block;
             font-family: 'Orbitron', sans-serif;
@@ -224,7 +287,6 @@
             border: 1px solid rgba(230, 57, 0, 0.1);
             margin-bottom: 0.6rem;
         }
-
         .page-header h1 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
@@ -233,14 +295,12 @@
             letter-spacing: 2px;
             line-height: 1.1;
         }
-
         .page-header h1 .highlight {
             background: linear-gradient(135deg, #ff6a00, #e63900);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .page-header p {
             color: #999;
             max-width: 600px;
@@ -248,11 +308,10 @@
             font-size: 1rem;
         }
 
-        /* ========== CALENDARIO GRID ========== */
+        /* CALENDARIO GRID */
         .calendar-section {
             padding: 0.5rem 0 3rem;
         }
-
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -267,13 +326,11 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
             position: relative;
         }
-
         .race-card:hover {
             transform: translateY(-4px);
             border-color: rgba(230, 57, 0, 0.2);
         }
 
-        /* Race status indicator (barra laterale) */
         .race-card .status-bar {
             position: absolute;
             top: 0;
@@ -283,15 +340,12 @@
             border-radius: 16px 0 0 16px;
             transition: all 0.3s ease;
         }
-
         .race-card .status-bar.past {
             background: #555;
         }
-
         .race-card .status-bar.current {
             background: linear-gradient(180deg, #ff6a00, #e63900);
         }
-
         .race-card .status-bar.upcoming {
             background: #ff6a00;
         }
@@ -306,7 +360,6 @@
             flex-wrap: wrap;
             gap: 0.4rem;
         }
-
         .race-card .race-code {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -315,7 +368,6 @@
             line-height: 1;
             letter-spacing: 1px;
         }
-
         .race-card .race-date {
             font-size: 0.75rem;
             font-weight: 600;
@@ -327,13 +379,11 @@
             border: 1px solid rgba(230, 57, 0, 0.08);
             white-space: nowrap;
         }
-
         .race-card .race-date.past-date {
             color: #666;
             background: rgba(255, 255, 255, 0.04);
             border-color: rgba(255, 255, 255, 0.04);
         }
-
         .race-card .race-date.current-date {
             color: #fff;
             background: rgba(230, 57, 0, 0.25);
@@ -347,7 +397,6 @@
             position: relative;
             z-index: 2;
         }
-
         .race-card .race-location {
             font-size: 0.85rem;
             color: #999;
@@ -357,13 +406,11 @@
             position: relative;
             z-index: 2;
         }
-
         .race-card .race-location i {
             color: #ff6a00;
             font-size: 0.7rem;
         }
 
-        /* ===== RISULTATI SPECIFICI ===== */
         .race-card .race-results-detail {
             margin-top: 0.8rem;
             padding-top: 0.8rem;
@@ -371,7 +418,6 @@
             position: relative;
             z-index: 2;
         }
-
         .race-card .race-results-detail .result-row {
             display: flex;
             justify-content: space-between;
@@ -380,27 +426,22 @@
             padding: 0.15rem 0;
             color: #bbb;
         }
-
         .race-card .race-results-detail .result-row .pilot-name {
             font-weight: 600;
             color: #ddd;
             min-width: 70px;
         }
-
         .race-card .race-results-detail .result-row .pilot-results {
             display: flex;
             gap: 0.8rem;
             font-weight: 500;
         }
-
         .race-card .race-results-detail .result-row .pilot-results .g1 {
             color: #66ccff;
         }
-
         .race-card .race-results-detail .result-row .pilot-results .g2 {
             color: #ffaa00;
         }
-
         .race-card .race-results-detail .result-label {
             font-size: 0.6rem;
             text-transform: uppercase;
@@ -408,15 +449,12 @@
             color: #666;
             margin-bottom: 0.2rem;
         }
-
         .race-card .race-results-detail .result-label .g1-label {
             color: #66ccff;
         }
-
         .race-card .race-results-detail .result-label .g2-label {
             color: #ffaa00;
         }
-
         .race-card .status-upcoming {
             display: inline-block;
             font-size: 0.7rem;
@@ -431,7 +469,7 @@
             margin-top: 0.6rem;
         }
 
-        /* ========== LEGENDA ========== */
+        /* LEGENDA */
         .legend-bar {
             display: flex;
             justify-content: center;
@@ -441,7 +479,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             margin-bottom: 2rem;
         }
-
         .legend-item {
             display: flex;
             align-items: center;
@@ -452,27 +489,23 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .legend-item .dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             flex-shrink: 0;
         }
-
         .legend-item .dot.past-dot {
             background: #555;
         }
-
         .legend-item .dot.current-dot {
             background: linear-gradient(135deg, #ff6a00, #e63900);
         }
-
         .legend-item .dot.upcoming-dot {
             background: #ff6a00;
         }
 
-        /* ========== SOCIAL BAR ========== */
+        /* SOCIAL BAR */
         .social-bar {
             display: flex;
             justify-content: center;
@@ -481,7 +514,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             margin-top: 2.5rem;
         }
-
         .social-bar a {
             display: flex;
             align-items: center;
@@ -495,7 +527,6 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
-
         .social-bar a:hover {
             background: rgba(230, 57, 0, 0.12);
             border-color: rgba(230, 57, 0, 0.25);
@@ -503,7 +534,7 @@
             transform: translateY(-3px);
         }
 
-        /* ========== FOOTER ========== */
+        /* FOOTER */
         .footer {
             padding: 2rem 0 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -512,7 +543,6 @@
             color: #666;
             font-size: 0.85rem;
         }
-
         .footer .footer-brand {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -525,7 +555,6 @@
             display: inline-block;
             margin-bottom: 0.3rem;
         }
-
         .footer .footer-links {
             display: flex;
             justify-content: center;
@@ -533,7 +562,6 @@
             margin: 0.5rem 0 0.6rem;
             flex-wrap: wrap;
         }
-
         .footer .footer-links a {
             color: #888;
             font-size: 0.75rem;
@@ -541,12 +569,11 @@
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
         }
-
         .footer .footer-links a:hover {
             color: #ff6a00;
         }
 
-        /* ========== RESPONSIVE ========== */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -557,102 +584,80 @@
                 background: rgba(10, 10, 10, 0.96);
                 border-top: 1px solid rgba(255, 255, 255, 0.05);
             }
-
             .nav-links.open {
                 display: flex;
             }
-
             .hamburger {
                 display: flex;
             }
-
             .navbar .container {
                 flex-wrap: wrap;
             }
-
             .logo-wrap img {
                 height: 36px;
             }
-
             .page-header {
                 padding: 7rem 0 2rem;
             }
-
             .page-header h1 {
                 font-size: clamp(1.8rem, 5vw, 2.4rem);
             }
-
             .calendar-grid {
                 grid-template-columns: 1fr;
                 gap: 1.2rem;
             }
-
             .race-card {
                 padding: 1.2rem 1.2rem 1rem;
             }
-
             .race-card .race-code {
                 font-size: 1.4rem;
             }
-
             .race-card .race-results-detail .result-row {
                 font-size: 0.8rem;
                 flex-wrap: wrap;
                 gap: 0.2rem;
             }
-
             .legend-bar {
                 gap: 1.2rem;
                 padding: 1rem 0 1.5rem;
             }
-
             .legend-item {
                 font-size: 0.65rem;
             }
-
             .social-bar {
                 gap: 1rem;
                 padding: 1.5rem 0 0.3rem;
             }
-
             .social-bar a {
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
             }
-
             .footer .footer-links {
                 gap: 0.8rem;
             }
         }
-
         @media (max-width: 480px) {
             .container {
                 padding: 0 1rem;
             }
-
             .page-header p {
                 font-size: 0.9rem;
             }
-
             .race-card .race-top {
                 flex-wrap: wrap;
                 gap: 0.3rem;
             }
-
             .race-card .race-date {
                 font-size: 0.65rem;
                 padding: 0.1rem 0.6rem;
             }
-
             .race-card .race-name {
                 font-size: 1rem;
             }
-
             .race-card .race-results-detail .result-row {
                 font-size: 0.75rem;
             }
-
             .race-card .race-results-detail .result-row .pilot-name {
                 min-width: 55px;
             }
@@ -666,10 +671,9 @@
         <div class="container">
             <div class="logo-wrap">
                 <a href="./">
-                    <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse" />
+                    <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse - logo" />
                 </a>
             </div>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="./">Home</a></li>
                 <li><a href="Calendario.html" class="active">Calendario</a></li>
@@ -677,7 +681,6 @@
                 <li><a href="Stagione-2026.html">Stagione 2026</a></li>
                 <li><a href="#contatti" class="btn-cta">Contatti</a></li>
             </ul>
-
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -698,8 +701,6 @@
     <!-- ===== CALENDARIO ===== -->
     <section class="calendar-section">
         <div class="container">
-
-            <!-- Legenda -->
             <div class="legend-bar">
                 <span class="legend-item">
                     <span class="dot past-dot"></span> Già corsa
@@ -711,16 +712,12 @@
                     <span class="dot upcoming-dot"></span> In programma
                 </span>
             </div>
-
-            <!-- Griglia gare -->
             <div class="calendar-grid" id="calendarGrid"></div>
-
-            <!-- Social Bar -->
             <div class="social-bar">
-                <a href="https://www.facebook.com/profile.php?id=100090754430561" target="_blank" aria-label="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=100090754430561" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://www.instagram.com/fpcorse/" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/fpcorse/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -741,21 +738,18 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT OTTIMIZZATO ===== -->
     <script>
         (function() {
             'use strict';
 
-            // — Hamburger toggle
+            // Hamburger
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('navLinks');
-
             if (hamburger && navLinks) {
                 hamburger.addEventListener('click', function() {
                     hamburger.classList.toggle('active');
                     navLinks.classList.toggle('open');
                 });
-
                 document.querySelectorAll('.nav-links a').forEach(function(link) {
                     link.addEventListener('click', function() {
                         hamburger.classList.remove('active');
@@ -764,10 +758,9 @@
                 });
             }
 
-            // — Navbar scroll effect
+            // Navbar scroll
             const navbar = document.getElementById('navbar');
             let ticking = false;
-
             if (navbar) {
                 window.addEventListener('scroll', function() {
                     if (!ticking) {
@@ -784,31 +777,25 @@
                 });
             }
 
-            // ===== DATI GARE CON RISULTATI SPECIFICI =====
+            // Dati gare con risultati
             const races = [{
                 code: 'R01',
                 date: '2026-05-24',
                 track: "Autodromo dell'Umbria",
                 location: 'Magione (PG), Italia',
-                results: {
-                    dario: { g1: 'P8', g2: 'P12' },
-                    christian: { g1: 'P5', g2: 'P5' }
-                }
+                results: { dario: { g1: 'P8', g2: 'P12' }, christian: { g1: 'P5', g2: 'P5' } }
             }, {
                 code: 'R02',
                 date: '2026-06-21',
                 track: 'Autodromo di Modena',
                 location: 'Modena, Italia',
-                results: {
-                    dario: { g1: 'P13', g2: 'P21' },
-                    christian: { g1: 'P9', g2: 'P7' }
-                }
+                results: { dario: { g1: 'P13', g2: 'P21' }, christian: { g1: 'P9', g2: 'P7' } }
             }, {
                 code: 'R03',
                 date: '2026-08-02',
                 track: 'Autodromo di Viterbo',
                 location: 'Viterbo, Italia',
-                results: null // ancora da correre
+                results: null
             }, {
                 code: 'R04',
                 date: '2026-08-30',
@@ -823,19 +810,16 @@
                 results: null
             }];
 
-            // — Funzione status
             function getRaceStatus(dateStr) {
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
                 const raceDate = new Date(dateStr);
                 raceDate.setHours(0, 0, 0, 0);
-
                 if (raceDate < today) return 'past';
                 if (raceDate.getTime() === today.getTime()) return 'current';
                 return 'upcoming';
             }
 
-            // — Render
             function renderCalendar() {
                 const grid = document.getElementById('calendarGrid');
                 if (!grid) return;
@@ -854,20 +838,12 @@
 
                     let dateClass = 'past-date';
                     let barClass = 'past';
+                    if (isCurrent) { dateClass = 'current-date';
+                        barClass = 'current'; } else if (isUpcoming) { dateClass = '';
+                        barClass = 'upcoming'; }
 
-                    if (isCurrent) {
-                        dateClass = 'current-date';
-                        barClass = 'current';
-                    } else if (isUpcoming) {
-                        dateClass = '';
-                        barClass = 'upcoming';
-                    }
-
-                    // Costruisce la card
                     let resultsHTML = '';
-
                     if (isPast && race.results) {
-                        // Mostra i risultati specifici
                         resultsHTML = `
                             <div class="race-results-detail">
                                 <div class="result-label">
@@ -894,18 +870,11 @@
                             </div>
                         `;
                     } else if (isUpcoming || isCurrent) {
-                        resultsHTML = `
-                            <div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05);">
-                                <span class="status-upcoming">${isCurrent ? '⏳ Prossima' : '📅 In programma'}</span>
-                            </div>
-                        `;
+                        resultsHTML =
+                            `<div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05);"><span class="status-upcoming">${isCurrent ? '⏳ Prossima' : '📅 In programma'}</span></div>`;
                     } else {
-                        // Fallback (non dovrebbe succedere)
-                        resultsHTML = `
-                            <div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05); color:#666; font-size:0.8rem;">
-                                Risultati non disponibili
-                            </div>
-                        `;
+                        resultsHTML =
+                            `<div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05); color:#666; font-size:0.8rem;">Risultati non disponibili</div>`;
                     }
 
                     const card = document.createElement('div');
@@ -914,7 +883,6 @@
                     card.style.transform = 'translateY(20px)';
                     card.style.transition = 'opacity 0.5s ease ' + (index * 0.06) + 's, transform 0.5s ease ' + (index *
                         0.06) + 's';
-
                     card.innerHTML =
                         '<div class="status-bar ' + barClass + '"></div>' +
                         '<div class="race-top">' +
@@ -924,9 +892,7 @@
                         '<div class="race-name">' + race.track + '</div>' +
                         '<div class="race-location"><i class="fas fa-map-pin"></i> ' + race.location + '</div>' +
                         resultsHTML;
-
                     grid.appendChild(card);
-
                     setTimeout(function() {
                         card.style.opacity = '1';
                         card.style.transform = 'translateY(0)';
@@ -935,7 +901,6 @@
             }
 
             document.addEventListener('DOMContentLoaded', renderCalendar);
-
         })();
     </script>
 </body>

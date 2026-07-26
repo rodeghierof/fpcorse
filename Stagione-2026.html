@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stagione 2026 — FP Corse</title>
-    <meta name="description" content="Stagione 2026 di FP Corse nel CIV Junior" />
+    <title>Stagione 2026 FP Corse – Resoconti gare CIV Junior</title>
+    <meta name="description" content="Leggi i resoconti completi delle gare del CIV Junior 2026: Magione, Modena e i prossimi round. Risultati e foto di Dario Scibilia e Christian Bianchi." />
+    <meta name="keywords" content="Stagione 2026 FP Corse, CIV Junior, Magione, Modena, risultati, Dario Scibilia, Christian Bianchi" />
+    <link rel="canonical" href="https://rodeghierof.github.io/fpcorse/Stagione-2026.html" />
+
+    <meta property="og:title" content="Stagione 2026 FP Corse – Resoconti gare CIV Junior" />
+    <meta property="og:description" content="Resoconti delle gare del CIV Junior 2026: Magione, Modena e prossimi round. Tutti i risultati di FP Corse." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rodeghierof.github.io/fpcorse/Stagione-2026.html" />
+    <meta property="og:image" content="https://rodeghierof.github.io/fpcorse/images/logofpcorsetagliomaglia.png" />
+
+    <!-- Schema markup per gli articoli (resoconti) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Resoconti stagione 2026",
+            "description": "Resoconti completi del CIV Junior 2026 per FP Corse",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Article",
+                    "headline": "Round 1 – Magione",
+                    "datePublished": "2026-05-24",
+                    "author": {
+                        "@type": "Organization",
+                        "name": "FP Corse"
+                    },
+                    "description": "Resoconto della prima gara del CIV Junior 2026 a Magione."
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Article",
+                    "headline": "Round 2 – Modena",
+                    "datePublished": "2026-06-21",
+                    "author": {
+                        "@type": "Organization",
+                        "name": "FP Corse"
+                    },
+                    "description": "Resoconto del secondo round del CIV Junior 2026 a Modena."
+                }
+            }]
+        }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +63,7 @@
     <link rel="icon" href="images/favicon.png" />
 
     <style>
-        /* ========== RESET & BASE ========== */
+        /* (stile identico alla versione già condivisa, nessuna modifica al contenuto) */
         *,
         *::before,
         *::after {
@@ -26,11 +71,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Rajdhani', sans-serif;
             background: #0a0a0a;
@@ -39,28 +82,23 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-
         a {
             text-decoration: none;
             color: inherit;
         }
-
         ul {
             list-style: none;
         }
-
         img {
             max-width: 100%;
             display: block;
         }
-
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* ========== SCROLLBAR (solo desktop) ========== */
         @media (min-width: 768px) {
             ::-webkit-scrollbar {
                 width: 8px;
@@ -77,7 +115,7 @@
             }
         }
 
-        /* ========== NAVBAR ========== */
+        /* NAVBAR (identica) */
         .navbar {
             position: fixed;
             top: 0;
@@ -89,35 +127,29 @@
             border-bottom: 1px solid rgba(230, 57, 0, 0.15);
             transition: background 0.3s ease;
         }
-
         .navbar.scrolled {
             background: rgba(10, 10, 10, 0.96);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
         }
-
         .navbar .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
         }
-
         .logo-wrap {
             display: flex;
             align-items: center;
         }
-
         .logo-wrap img {
             height: 42px;
             width: auto;
         }
-
         .nav-links {
             display: flex;
             align-items: center;
             gap: 1.8rem;
         }
-
         .nav-links a {
             font-weight: 600;
             font-size: 0.85rem;
@@ -127,7 +159,6 @@
             transition: color 0.3s ease;
             position: relative;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -138,20 +169,16 @@
             background: linear-gradient(90deg, #ff6a00, #e63900);
             transition: width 0.3s ease;
         }
-
         .nav-links a:hover {
             color: #fff;
         }
-
         .nav-links a:hover::after,
         .nav-links a.active::after {
             width: 100%;
         }
-
         .nav-links a.active {
             color: #fff;
         }
-
         .nav-links .btn-cta {
             background: linear-gradient(135deg, #ff6a00, #e63900);
             color: #fff !important;
@@ -161,18 +188,15 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 24px rgba(230, 57, 0, 0.3);
         }
-
         .nav-links .btn-cta::after {
             display: none;
         }
-
         .nav-links .btn-cta:hover {
             transform: scale(1.04);
             box-shadow: 0 8px 36px rgba(230, 57, 0, 0.5);
             color: #fff !important;
         }
 
-        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -181,7 +205,6 @@
             padding: 4px;
             z-index: 1001;
         }
-
         .hamburger span {
             display: block;
             width: 28px;
@@ -190,26 +213,21 @@
             border-radius: 4px;
             transition: all 0.3s ease;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* ========== PAGE HEADER ========== */
         .page-header {
             padding: 8rem 0 2.5rem;
             text-align: center;
             position: relative;
         }
-
         .page-header .tag {
             display: inline-block;
             font-family: 'Orbitron', sans-serif;
@@ -224,7 +242,6 @@
             border: 1px solid rgba(230, 57, 0, 0.1);
             margin-bottom: 0.6rem;
         }
-
         .page-header h1 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
@@ -233,14 +250,12 @@
             letter-spacing: 2px;
             line-height: 1.1;
         }
-
         .page-header h1 .highlight {
             background: linear-gradient(135deg, #ff6a00, #e63900);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .page-header p {
             color: #999;
             max-width: 600px;
@@ -248,12 +263,9 @@
             font-size: 1rem;
         }
 
-        /* ========== SEZIONE STAGIONE ========== */
         .season-section {
             padding: 0.5rem 0 3rem;
         }
-
-        /* Intro */
         .season-intro {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 16px;
@@ -263,24 +275,20 @@
             text-align: center;
             transition: border-color 0.3s ease;
         }
-
         .season-intro:hover {
             border-color: rgba(230, 57, 0, 0.15);
         }
-
         .season-intro .icon-box {
             font-size: 2.4rem;
             color: #ff6a00;
             margin-bottom: 0.6rem;
         }
-
         .season-intro h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
-
         .season-intro p {
             color: #bbb;
             max-width: 800px;
@@ -289,14 +297,12 @@
             line-height: 1.7;
         }
 
-        /* Round grid */
         .round-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
-
         .round-card {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 16px;
@@ -305,12 +311,10 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
             position: relative;
         }
-
         .round-card:hover {
             transform: translateY(-4px);
             border-color: rgba(230, 57, 0, 0.2);
         }
-
         .round-card .round-header {
             display: flex;
             justify-content: space-between;
@@ -319,7 +323,6 @@
             flex-wrap: wrap;
             gap: 0.4rem;
         }
-
         .round-card .round-code {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -327,7 +330,6 @@
             color: rgba(255, 255, 255, 0.08);
             line-height: 1;
         }
-
         .round-card .round-date {
             font-size: 0.75rem;
             font-weight: 600;
@@ -338,13 +340,11 @@
             border: 1px solid rgba(230, 57, 0, 0.08);
             white-space: nowrap;
         }
-
         .round-card .round-track {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 0.1rem;
         }
-
         .round-card .round-location {
             font-size: 0.85rem;
             color: #999;
@@ -352,13 +352,11 @@
             align-items: center;
             gap: 0.4rem;
         }
-
         .round-card .round-location i {
             color: #ff6a00;
             font-size: 0.7rem;
         }
 
-        /* Pulsante espandi */
         .btn-expand {
             margin-top: 0.8rem;
             padding: 0.4rem 1.2rem;
@@ -377,21 +375,17 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .btn-expand:hover {
             background: rgba(230, 57, 0, 0.1);
             border-color: #ff6a00;
         }
-
         .btn-expand i {
             transition: transform 0.3s ease;
         }
-
         .btn-expand.open i {
             transform: rotate(180deg);
         }
 
-        /* Contenuto espanso */
         .round-expand {
             max-height: 0;
             overflow: hidden;
@@ -399,13 +393,11 @@
             opacity: 0;
             margin-top: 0;
         }
-
         .round-expand.open {
             max-height: 3000px;
             opacity: 1;
             margin-top: 1rem;
         }
-
         .round-expand .report-text {
             color: #bbb;
             font-size: 0.95rem;
@@ -417,18 +409,15 @@
             white-space: pre-wrap;
             word-wrap: break-word;
         }
-
         .round-expand .report-text strong {
             color: #fff;
         }
-
         .round-expand .report-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 0.8rem;
             margin-top: 0.8rem;
         }
-
         .round-expand .report-gallery img {
             border-radius: 10px;
             aspect-ratio: 4/3;
@@ -438,11 +427,9 @@
             width: 100%;
             background: #1a1a1a;
         }
-
         .round-expand .report-gallery img:hover {
             transform: scale(1.03);
         }
-
         .round-expand .report-source {
             font-size: 0.7rem;
             color: #666;
@@ -451,7 +438,6 @@
             text-align: right;
         }
 
-        /* Stato "in programma" */
         .round-card .status-upcoming {
             display: inline-block;
             font-size: 0.7rem;
@@ -466,7 +452,6 @@
             margin-top: 0.6rem;
         }
 
-        /* ========== SOCIAL BAR ========== */
         .social-bar {
             display: flex;
             justify-content: center;
@@ -475,7 +460,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             margin-top: 2.5rem;
         }
-
         .social-bar a {
             display: flex;
             align-items: center;
@@ -489,7 +473,6 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
-
         .social-bar a:hover {
             background: rgba(230, 57, 0, 0.12);
             border-color: rgba(230, 57, 0, 0.25);
@@ -497,7 +480,6 @@
             transform: translateY(-3px);
         }
 
-        /* ========== FOOTER ========== */
         .footer {
             padding: 2rem 0 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -506,7 +488,6 @@
             color: #666;
             font-size: 0.85rem;
         }
-
         .footer .footer-brand {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -519,7 +500,6 @@
             display: inline-block;
             margin-bottom: 0.3rem;
         }
-
         .footer .footer-links {
             display: flex;
             justify-content: center;
@@ -527,7 +507,6 @@
             margin: 0.5rem 0 0.6rem;
             flex-wrap: wrap;
         }
-
         .footer .footer-links a {
             color: #888;
             font-size: 0.75rem;
@@ -535,12 +514,10 @@
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
         }
-
         .footer .footer-links a:hover {
             color: #ff6a00;
         }
 
-        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -551,90 +528,70 @@
                 background: rgba(10, 10, 10, 0.96);
                 border-top: 1px solid rgba(255, 255, 255, 0.05);
             }
-
             .nav-links.open {
                 display: flex;
             }
-
             .hamburger {
                 display: flex;
             }
-
             .navbar .container {
                 flex-wrap: wrap;
             }
-
             .logo-wrap img {
                 height: 36px;
             }
-
             .page-header {
                 padding: 7rem 0 2rem;
             }
-
             .page-header h1 {
                 font-size: clamp(1.8rem, 5vw, 2.4rem);
             }
-
             .round-grid {
                 grid-template-columns: 1fr;
                 gap: 1.2rem;
             }
-
             .round-card {
                 padding: 1.2rem;
             }
-
             .season-intro {
                 padding: 1.5rem;
             }
-
             .season-intro h2 {
                 font-size: 1.3rem;
             }
-
             .round-expand .report-gallery {
                 grid-template-columns: 1fr 1fr;
             }
-
             .social-bar {
                 gap: 1rem;
                 padding: 1.5rem 0 0.3rem;
             }
-
             .social-bar a {
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
             }
-
             .footer .footer-links {
                 gap: 0.8rem;
             }
         }
-
         @media (max-width: 480px) {
             .container {
                 padding: 0 1rem;
             }
-
             .round-expand .report-text {
                 font-size: 0.85rem;
                 padding: 0.6rem 0.8rem;
             }
-
             .round-expand .report-gallery {
                 grid-template-columns: 1fr;
             }
-
             .season-intro {
                 padding: 1rem;
             }
-
             .season-intro h2 {
                 font-size: 1.1rem;
             }
-
             .season-intro p {
                 font-size: 0.9rem;
             }
@@ -648,10 +605,9 @@
         <div class="container">
             <div class="logo-wrap">
                 <a href="./">
-                    <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse" />
+                    <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse - logo" />
                 </a>
             </div>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="./">Home</a></li>
                 <li><a href="Calendario.html">Calendario</a></li>
@@ -659,7 +615,6 @@
                 <li><a href="Stagione-2026.html" class="active">Stagione 2026</a></li>
                 <li><a href="#contatti" class="btn-cta">Contatti</a></li>
             </ul>
-
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -680,8 +635,6 @@
     <!-- ===== CONTENUTO STAGIONE ===== -->
     <section class="season-section">
         <div class="container">
-
-            <!-- Intro -->
             <div class="season-intro">
                 <div class="icon-box"><i class="fas fa-flag-checkered"></i></div>
                 <h2>La stagione di <span style="color:#ff6a00;">FP Corse</span></h2>
@@ -692,10 +645,9 @@
                 </p>
             </div>
 
-            <!-- Round Grid -->
             <div class="round-grid">
 
-                <!-- ===== ROUND 1: MAGIONE ===== -->
+                <!-- Round 1: Magione -->
                 <div class="round-card">
                     <div class="round-header">
                         <span class="round-code">R01</span>
@@ -703,11 +655,9 @@
                     </div>
                     <div class="round-track">Autodromo dell'Umbria</div>
                     <div class="round-location"><i class="fas fa-map-pin"></i> Magione (PG), Italia</div>
-
                     <button class="btn-expand" data-target="report-magione">
                         <i class="fas fa-chevron-down"></i> Leggi il resoconto
                     </button>
-
                     <div class="round-expand" id="report-magione">
                         <div class="report-text">
                             <strong>🏁 Round 1 – Magione</strong>
@@ -730,19 +680,17 @@
                             Ringraziamo tutti coloro che hanno lavorato e ci hanno permesso di essere qui.
                             Ci vediamo fra meno di un mese a Modena più forti ancora 🚀🚀🚀
                         </div>
-
-                        <!-- GALLERY FOTO MAGIONE (4 foto) -->
                         <div class="report-gallery">
-                            <img src="images/magione 1.jpeg" alt="Magione 2026 - 1" loading="lazy" />
-                            <img src="images/magione 2.jpeg" alt="Magione 2026 - 2" loading="lazy" />
-                            <img src="images/magione 3.jpeg" alt="Magione 2026 - 3" loading="lazy" />
-                            <img src="images/magione 4.jpeg" alt="Magione 2026 - 4" loading="lazy" />
+                            <img src="images/magione 1.jpeg" alt="Magione 2026 - foto 1" loading="lazy" />
+                            <img src="images/magione 2.jpeg" alt="Magione 2026 - foto 2" loading="lazy" />
+                            <img src="images/magione 3.jpeg" alt="Magione 2026 - foto 3" loading="lazy" />
+                            <img src="images/magione 4.jpeg" alt="Magione 2026 - foto 4" loading="lazy" />
                         </div>
                         <span class="report-source">📸 Magione 2026</span>
                     </div>
                 </div>
 
-                <!-- ===== ROUND 2: MODENA ===== -->
+                <!-- Round 2: Modena -->
                 <div class="round-card">
                     <div class="round-header">
                         <span class="round-code">R02</span>
@@ -750,11 +698,9 @@
                     </div>
                     <div class="round-track">Autodromo di Modena</div>
                     <div class="round-location"><i class="fas fa-map-pin"></i> Modena, Italia</div>
-
                     <button class="btn-expand" data-target="report-modena">
                         <i class="fas fa-chevron-down"></i> Leggi il resoconto
                     </button>
-
                     <div class="round-expand" id="report-modena">
                         <div class="report-text">
                             <strong>🏁 Round 2 – Modena</strong>
@@ -777,24 +723,22 @@
                             Ringraziamo tutti i membri del team e coloro che hanno lavorato questo weekend, i piloti Dario e Christian, e tutti coloro che ci hanno permesso di essere qui.
                             🙏 @christian_kamikaze_14, @dario.0514, @fmev.ents, @avfmotorsport_, @lettoflex, @thermaltechnology, @ohvale_italia, @federmoto.it, @motominiws
                         </div>
-
-                        <!-- GALLERY FOTO MODENA (9 foto) -->
                         <div class="report-gallery">
-                            <img src="images/modena 1.jpeg" alt="Modena 2026 - 1" loading="lazy" />
-                            <img src="images/modena 2.jpeg" alt="Modena 2026 - 2" loading="lazy" />
-                            <img src="images/modena 3.jpeg" alt="Modena 2026 - 3" loading="lazy" />
-                            <img src="images/modena 4.jpeg" alt="Modena 2026 - 4" loading="lazy" />
-                            <img src="images/modena 5.jpeg" alt="Modena 2026 - 5" loading="lazy" />
-                            <img src="images/modena 6.jpeg" alt="Modena 2026 - 6" loading="lazy" />
-                            <img src="images/modena 7.jpeg" alt="Modena 2026 - 7" loading="lazy" />
-                            <img src="images/modena 8.jpeg" alt="Modena 2026 - 8" loading="lazy" />
-                            <img src="images/modena 9.jpeg" alt="Modena 2026 - 9" loading="lazy" />
+                            <img src="images/modena 1.jpeg" alt="Modena 2026 - foto 1" loading="lazy" />
+                            <img src="images/modena 2.jpeg" alt="Modena 2026 - foto 2" loading="lazy" />
+                            <img src="images/modena 3.jpeg" alt="Modena 2026 - foto 3" loading="lazy" />
+                            <img src="images/modena 4.jpeg" alt="Modena 2026 - foto 4" loading="lazy" />
+                            <img src="images/modena 5.jpeg" alt="Modena 2026 - foto 5" loading="lazy" />
+                            <img src="images/modena 6.jpeg" alt="Modena 2026 - foto 6" loading="lazy" />
+                            <img src="images/modena 7.jpeg" alt="Modena 2026 - foto 7" loading="lazy" />
+                            <img src="images/modena 8.jpeg" alt="Modena 2026 - foto 8" loading="lazy" />
+                            <img src="images/modena 9.jpeg" alt="Modena 2026 - foto 9" loading="lazy" />
                         </div>
                         <span class="report-source">📸 Modena 2026</span>
                     </div>
                 </div>
 
-                <!-- ===== ROUND 3: VITERBO ===== -->
+                <!-- Round 3: Viterbo -->
                 <div class="round-card">
                     <div class="round-header">
                         <span class="round-code">R03</span>
@@ -803,12 +747,10 @@
                     <div class="round-track">Leopard Circuit Viterbo</div>
                     <div class="round-location"><i class="fas fa-map-pin"></i> Viterbo, Italia</div>
                     <span class="status-upcoming">⏳ Weekend in programma</span>
-                    <p style="color:#666; font-size:0.9rem; margin-top:0.4rem;">
-                        Il resoconto sarà disponibile dopo il weekend di gara.
-                    </p>
+                    <p style="color:#666; font-size:0.9rem; margin-top:0.4rem;">Il resoconto sarà disponibile dopo il weekend di gara.</p>
                 </div>
 
-                <!-- ===== ROUND 4: MODENA ===== -->
+                <!-- Round 4: Modena -->
                 <div class="round-card">
                     <div class="round-header">
                         <span class="round-code">R04</span>
@@ -817,12 +759,10 @@
                     <div class="round-track">Autodromo di Modena</div>
                     <div class="round-location"><i class="fas fa-map-pin"></i> Modena, Italia</div>
                     <span class="status-upcoming">⏳ Weekend in programma</span>
-                    <p style="color:#666; font-size:0.9rem; margin-top:0.4rem;">
-                        Il resoconto sarà disponibile dopo il weekend di gara.
-                    </p>
+                    <p style="color:#666; font-size:0.9rem; margin-top:0.4rem;">Il resoconto sarà disponibile dopo il weekend di gara.</p>
                 </div>
 
-                <!-- ===== ROUND 5: VARANO ===== -->
+                <!-- Round 5: Varano -->
                 <div class="round-card">
                     <div class="round-header">
                         <span class="round-code">R05</span>
@@ -831,19 +771,16 @@
                     <div class="round-track">Autodromo di Varano</div>
                     <div class="round-location"><i class="fas fa-map-pin"></i> Varano de' Melegari (PR), Italia</div>
                     <span class="status-upcoming">⏳ Weekend in programma</span>
-                    <p style="color:#666; font-size:0.9rem; margin-top:0.4rem;">
-                        Il resoconto sarà disponibile dopo il weekend di gara.
-                    </p>
+                    <p style="color:#666; font-size:0.9rem; margin-top:0.4rem;">Il resoconto sarà disponibile dopo il weekend di gara.</p>
                 </div>
 
             </div>
 
-            <!-- Social Bar -->
             <div class="social-bar">
-                <a href="https://www.facebook.com/profile.php?id=100090754430561" target="_blank" aria-label="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=100090754430561" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://www.instagram.com/fpcorse/" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/fpcorse/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -864,21 +801,16 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT OTTIMIZZATO ===== -->
     <script>
         (function() {
             'use strict';
-
-            // — Hamburger toggle
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('navLinks');
-
             if (hamburger && navLinks) {
                 hamburger.addEventListener('click', function() {
                     hamburger.classList.toggle('active');
                     navLinks.classList.toggle('open');
                 });
-
                 document.querySelectorAll('.nav-links a').forEach(function(link) {
                     link.addEventListener('click', function() {
                         hamburger.classList.remove('active');
@@ -886,11 +818,8 @@
                     });
                 });
             }
-
-            // — Navbar scroll effect
             const navbar = document.getElementById('navbar');
             let ticking = false;
-
             if (navbar) {
                 window.addEventListener('scroll', function() {
                     if (!ticking) {
@@ -907,16 +836,13 @@
                 });
             }
 
-            // — Espansione report (con toggle e chiusura altri aperti)
+            // Espansione report
             document.querySelectorAll('.btn-expand').forEach(function(btn) {
                 btn.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-target');
                     const target = document.getElementById(targetId);
-
                     if (target) {
                         const isOpen = target.classList.contains('open');
-
-                        // Chiudi tutti gli altri aperti (comportamento ad accordion)
                         document.querySelectorAll('.round-expand.open').forEach(function(el) {
                             if (el.id !== targetId) {
                                 el.classList.remove('open');
@@ -932,12 +858,8 @@
                                 }
                             }
                         });
-
-                        // Toggle quello corrente
                         target.classList.toggle('open');
                         this.classList.toggle('open');
-
-                        // Cambia icona
                         const icon = this.querySelector('i');
                         if (icon) {
                             icon.classList.toggle('fa-chevron-down');
@@ -947,9 +869,7 @@
                 });
             });
 
-            // — Scroll reveal (solo card e intro)
             const revealElements = document.querySelectorAll('.round-card, .season-intro');
-
             if ('IntersectionObserver' in window) {
                 const revealObserver = new IntersectionObserver(function(entries) {
                     entries.forEach(function(entry) {
@@ -959,14 +879,12 @@
                         }
                     });
                 }, { threshold: 0.08 });
-
                 revealElements.forEach(function(el) {
                     el.style.opacity = '0';
                     el.style.transform = 'translateY(20px)';
                     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                     revealObserver.observe(el);
                 });
-
                 setTimeout(function() {
                     revealElements.forEach(function(el) {
                         if (el.getBoundingClientRect().top < window.innerHeight) {
@@ -981,7 +899,6 @@
                     el.style.transform = 'translateY(0)';
                 });
             }
-
         })();
     </script>
 </body>
