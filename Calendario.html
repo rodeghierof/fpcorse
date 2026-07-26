@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -60,81 +60,20 @@
             padding: 0 2rem;
         }
 
-        /* ========== SCROLLBAR ========== */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #e63900;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #cc3300;
-        }
-
-        /* ========== ANIMATED BG ORBS ========== */
-        .bg-orbs {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .bg-orbs .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(130px);
-            opacity: 0.20;
-            animation: floatOrb 22s ease-in-out infinite alternate;
-        }
-
-        .bg-orbs .orb:nth-child(1) {
-            width: 700px;
-            height: 700px;
-            background: #e63900;
-            top: -15%;
-            left: -10%;
-            animation-delay: 0s;
-        }
-
-        .bg-orbs .orb:nth-child(2) {
-            width: 500px;
-            height: 500px;
-            background: #ff6a00;
-            bottom: -15%;
-            right: -5%;
-            animation-delay: -8s;
-        }
-
-        .bg-orbs .orb:nth-child(3) {
-            width: 400px;
-            height: 400px;
-            background: #b32d00;
-            top: 45%;
-            left: 50%;
-            transform: translateX(-50%);
-            animation-delay: -16s;
-        }
-
-        @keyframes floatOrb {
-            0% {
-                transform: translate(0, 0) scale(1);
+        /* ========== SCROLLBAR (solo desktop) ========== */
+        @media (min-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 8px;
             }
-            33% {
-                transform: translate(50px, -40px) scale(1.15);
+            ::-webkit-scrollbar-track {
+                background: #1a1a1a;
             }
-            66% {
-                transform: translate(-30px, 50px) scale(0.85);
+            ::-webkit-scrollbar-thumb {
+                background: #e63900;
+                border-radius: 10px;
             }
-            100% {
-                transform: translate(40px, -30px) scale(1.05);
+            ::-webkit-scrollbar-thumb:hover {
+                background: #cc3300;
             }
         }
 
@@ -145,16 +84,14 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1rem 0;
-            background: rgba(10, 10, 10, 0.72);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            padding: 0.8rem 0;
+            background: rgba(10, 10, 10, 0.9);
             border-bottom: 1px solid rgba(230, 57, 0, 0.15);
-            transition: all 0.35s ease;
+            transition: background 0.3s ease;
         }
 
         .navbar.scrolled {
-            background: rgba(10, 10, 10, 0.92);
+            background: rgba(10, 10, 10, 0.96);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
         }
 
@@ -168,33 +105,26 @@
         .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
         }
 
         .logo-wrap img {
-            height: 48px;
+            height: 42px;
             width: auto;
-            transition: transform 0.3s ease;
         }
-
-        .logo-wrap img:hover {
-            transform: scale(1.05);
-        }
-
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2.2rem;
+            gap: 1.8rem;
         }
 
         .nav-links a {
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1.2px;
             text-transform: uppercase;
             color: #b0b0b0;
-            transition: color 0.3s ease, transform 0.2s ease;
+            transition: color 0.3s ease;
             position: relative;
         }
 
@@ -202,7 +132,7 @@
             content: '';
             position: absolute;
             left: 0;
-            bottom: -6px;
+            bottom: -4px;
             width: 0;
             height: 2px;
             background: linear-gradient(90deg, #ff6a00, #e63900);
@@ -211,10 +141,10 @@
 
         .nav-links a:hover {
             color: #fff;
-            transform: translateY(-1px);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
         }
 
@@ -222,14 +152,10 @@
             color: #fff;
         }
 
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
         .nav-links .btn-cta {
             background: linear-gradient(135deg, #ff6a00, #e63900);
             color: #fff !important;
-            padding: 0.5rem 1.8rem;
+            padding: 0.4rem 1.6rem;
             border-radius: 50px;
             font-weight: 700;
             transition: all 0.3s ease;
@@ -241,7 +167,7 @@
         }
 
         .nav-links .btn-cta:hover {
-            transform: translateY(-2px) scale(1.04);
+            transform: scale(1.04);
             box-shadow: 0 8px 36px rgba(230, 57, 0, 0.5);
             color: #fff !important;
         }
@@ -279,7 +205,7 @@
 
         /* ========== PAGE HEADER ========== */
         .page-header {
-            padding: 9rem 0 3rem;
+            padding: 8rem 0 2.5rem;
             text-align: center;
             position: relative;
         }
@@ -288,8 +214,8 @@
             display: inline-block;
             font-family: 'Orbitron', sans-serif;
             font-weight: 600;
-            font-size: 0.7rem;
-            letter-spacing: 4px;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: #ff6a00;
             background: rgba(230, 57, 0, 0.08);
@@ -302,7 +228,7 @@
         .page-header h1 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
-            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
             text-transform: uppercase;
             letter-spacing: 2px;
             line-height: 1.1;
@@ -319,52 +245,32 @@
             color: #999;
             max-width: 600px;
             margin: 0.6rem auto 0;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         /* ========== CALENDARIO GRID ========== */
         .calendar-section {
-            padding: 1rem 0 4rem;
+            padding: 0.5rem 0 3rem;
         }
 
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .race-card {
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 1.8rem 1.8rem 1.5rem;
+            border-radius: 16px;
+            padding: 1.5rem 1.5rem 1.2rem;
             border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.4s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
             position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(4px);
-        }
-
-        .race-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(230, 57, 0, 0.03), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
         }
 
         .race-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             border-color: rgba(230, 57, 0, 0.2);
-            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .race-card:hover::before {
-            opacity: 1;
         }
 
         /* Race status indicator (barra laterale) */
@@ -374,8 +280,8 @@
             left: 0;
             bottom: 0;
             width: 4px;
-            border-radius: 20px 0 0 20px;
-            transition: all 0.4s ease;
+            border-radius: 16px 0 0 16px;
+            transition: all 0.3s ease;
         }
 
         .race-card .status-bar.past {
@@ -384,47 +290,38 @@
 
         .race-card .status-bar.current {
             background: linear-gradient(180deg, #ff6a00, #e63900);
-            animation: pulseBar 1.8s ease-in-out infinite;
         }
 
         .race-card .status-bar.upcoming {
             background: #ff6a00;
         }
 
-        @keyframes pulseBar {
-            0%,
-            100% {
-                opacity: 0.6;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
-
         .race-card .race-top {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.6rem;
+            align-items: center;
+            margin-bottom: 0.5rem;
             position: relative;
             z-index: 2;
+            flex-wrap: wrap;
+            gap: 0.4rem;
         }
 
         .race-card .race-code {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: rgba(255, 255, 255, 0.07);
             line-height: 1;
             letter-spacing: 1px;
         }
 
         .race-card .race-date {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: #ff6a00;
             background: rgba(230, 57, 0, 0.1);
-            padding: 0.2rem 0.9rem;
+            padding: 0.15rem 0.8rem;
             border-radius: 50px;
             letter-spacing: 0.5px;
             border: 1px solid rgba(230, 57, 0, 0.08);
@@ -441,111 +338,115 @@
             color: #fff;
             background: rgba(230, 57, 0, 0.25);
             border-color: rgba(230, 57, 0, 0.3);
-            box-shadow: 0 0 20px rgba(230, 57, 0, 0.15);
         }
 
         .race-card .race-name {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 0.1rem;
+            margin-bottom: 0.05rem;
             position: relative;
             z-index: 2;
         }
 
         .race-card .race-location {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #999;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             position: relative;
             z-index: 2;
         }
 
         .race-card .race-location i {
             color: #ff6a00;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
-        .race-card .race-result {
-            margin-top: 1.2rem;
-            padding-top: 1rem;
+        /* ===== RISULTATI SPECIFICI ===== */
+        .race-card .race-results-detail {
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             position: relative;
             z-index: 2;
         }
 
-        .race-card .race-result .result-badge {
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: #ffaa00;
-            background: rgba(255, 170, 0, 0.08);
-            padding: 0.25rem 1.2rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 170, 0, 0.1);
-            transition: all 0.3s ease;
+        .race-card .race-results-detail .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            padding: 0.15rem 0;
+            color: #bbb;
         }
 
-        .race-card .race-result .result-badge.past-result {
-            color: #66ccff;
-            background: rgba(102, 204, 255, 0.08);
-            border-color: rgba(102, 204, 255, 0.1);
+        .race-card .race-results-detail .result-row .pilot-name {
+            font-weight: 600;
+            color: #ddd;
+            min-width: 70px;
         }
 
-        .race-card .race-result .result-badge.upcoming-result {
-            color: #888;
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .race-card .race-result .result-badge.current-result {
-            color: #fff;
-            background: rgba(230, 57, 0, 0.2);
-            border-color: rgba(230, 57, 0, 0.25);
-            animation: pulseBadge 1.8s ease-in-out infinite;
-        }
-
-        @keyframes pulseBadge {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(230, 57, 0, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 20px 4px rgba(230, 57, 0, 0.1);
-            }
-        }
-
-        .race-card .race-result .status-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #666;
+        .race-card .race-results-detail .result-row .pilot-results {
+            display: flex;
+            gap: 0.8rem;
             font-weight: 500;
         }
 
-        .race-card .race-result .status-label.current-label {
-            color: #ff6a00;
+        .race-card .race-results-detail .result-row .pilot-results .g1 {
+            color: #66ccff;
+        }
+
+        .race-card .race-results-detail .result-row .pilot-results .g2 {
+            color: #ffaa00;
+        }
+
+        .race-card .race-results-detail .result-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            margin-bottom: 0.2rem;
+        }
+
+        .race-card .race-results-detail .result-label .g1-label {
+            color: #66ccff;
+        }
+
+        .race-card .race-results-detail .result-label .g2-label {
+            color: #ffaa00;
+        }
+
+        .race-card .status-upcoming {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffaa00;
+            background: rgba(255, 170, 0, 0.08);
+            padding: 0.15rem 0.8rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 170, 0, 0.1);
+            margin-top: 0.6rem;
         }
 
         /* ========== LEGENDA ========== */
         .legend-bar {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
-            padding: 1.5rem 0 2.5rem;
+            padding: 1.2rem 0 2rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .legend-item {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 0.8rem;
+            gap: 0.5rem;
+            font-size: 0.75rem;
             font-weight: 500;
             color: #999;
             text-transform: uppercase;
@@ -553,8 +454,8 @@
         }
 
         .legend-item .dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             flex-shrink: 0;
         }
@@ -565,46 +466,33 @@
 
         .legend-item .dot.current-dot {
             background: linear-gradient(135deg, #ff6a00, #e63900);
-            animation: pulseDot 1.8s ease-in-out infinite;
         }
 
         .legend-item .dot.upcoming-dot {
             background: #ff6a00;
         }
 
-        @keyframes pulseDot {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.7;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-        }
-
         /* ========== SOCIAL BAR ========== */
         .social-bar {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            padding: 2.5rem 0 1rem;
+            gap: 1.5rem;
+            padding: 2rem 0 0.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
 
         .social-bar a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 52px;
-            height: 52px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
             color: #aaa;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
 
@@ -612,44 +500,43 @@
             background: rgba(230, 57, 0, 0.12);
             border-color: rgba(230, 57, 0, 0.25);
             color: #ff6a00;
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(230, 57, 0, 0.15);
+            transform: translateY(-3px);
         }
 
         /* ========== FOOTER ========== */
         .footer {
-            padding: 2.5rem 0 1.5rem;
+            padding: 2rem 0 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             text-align: center;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .footer .footer-brand {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: 2px;
             background: linear-gradient(135deg, #ff6a00, #e63900);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
 
         .footer .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 0.6rem 0 0.8rem;
+            gap: 1.5rem;
+            margin: 0.5rem 0 0.6rem;
             flex-wrap: wrap;
         }
 
         .footer .footer-links a {
             color: #888;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
@@ -665,11 +552,9 @@
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                padding: 1.8rem 0;
-                gap: 1.2rem;
+                padding: 1.5rem 0;
+                gap: 1rem;
                 background: rgba(10, 10, 10, 0.96);
-                backdrop-filter: blur(18px);
-                -webkit-backdrop-filter: blur(18px);
                 border-top: 1px solid rgba(255, 255, 255, 0.05);
             }
 
@@ -685,9 +570,8 @@
                 flex-wrap: wrap;
             }
 
-
             .logo-wrap img {
-                height: 38px;
+                height: 36px;
             }
 
             .page-header {
@@ -695,7 +579,7 @@
             }
 
             .page-header h1 {
-                font-size: clamp(2rem, 6vw, 2.8rem);
+                font-size: clamp(1.8rem, 5vw, 2.4rem);
             }
 
             .calendar-grid {
@@ -704,76 +588,78 @@
             }
 
             .race-card {
-                padding: 1.4rem 1.4rem 1.2rem;
+                padding: 1.2rem 1.2rem 1rem;
             }
 
             .race-card .race-code {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
+            }
+
+            .race-card .race-results-detail .result-row {
+                font-size: 0.8rem;
+                flex-wrap: wrap;
+                gap: 0.2rem;
             }
 
             .legend-bar {
                 gap: 1.2rem;
-                padding: 1rem 0 1.8rem;
+                padding: 1rem 0 1.5rem;
             }
 
             .legend-item {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
             }
 
             .social-bar {
-                gap: 1.2rem;
-                padding: 2rem 0 0.5rem;
+                gap: 1rem;
+                padding: 1.5rem 0 0.3rem;
             }
 
             .social-bar a {
-                width: 46px;
-                height: 46px;
-                font-size: 1.1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
 
             .footer .footer-links {
-                gap: 1rem;
+                gap: 0.8rem;
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 0 1.2rem;
+                padding: 0 1rem;
             }
 
             .page-header p {
-                font-size: 0.95rem;
+                font-size: 0.9rem;
             }
 
             .race-card .race-top {
                 flex-wrap: wrap;
-                gap: 0.4rem;
+                gap: 0.3rem;
             }
 
             .race-card .race-date {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
+                padding: 0.1rem 0.6rem;
             }
 
-            .race-card .race-result {
-                flex-wrap: wrap;
-                gap: 0.6rem;
+            .race-card .race-name {
+                font-size: 1rem;
             }
 
-            .race-card .race-result .result-badge {
-                font-size: 0.8rem;
-                padding: 0.2rem 1rem;
+            .race-card .race-results-detail .result-row {
+                font-size: 0.75rem;
+            }
+
+            .race-card .race-results-detail .result-row .pilot-name {
+                min-width: 55px;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- ===== BACKGROUND ORBS ===== -->
-    <div class="bg-orbs">
-        <div class="orb"></div>
-        <div class="orb"></div>
-        <div class="orb"></div>
-    </div>
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
@@ -827,9 +713,7 @@
             </div>
 
             <!-- Griglia gare -->
-            <div class="calendar-grid" id="calendarGrid">
-                <!-- Le card verranno generate da JavaScript -->
-            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
 
             <!-- Social Bar -->
             <div class="social-bar">
@@ -857,182 +741,202 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
+    <!-- ===== JAVASCRIPT OTTIMIZZATO ===== -->
     <script>
-        // ===== NUOVI DATI GARE (CIV Junior 2026) =====
-        const races = [{
-            code: 'R01',
-            date: '2026-05-24',
-            track: 'Autodromo dell\'Umbria',
-            location: 'Magione (PG), Italia',
-            result: 'Da definire',
-            status: 'past' // verrà ricalcolato
-        }, {
-            code: 'R02',
-            date: '2026-06-21',
-            track: 'Autodromo di Modena',
-            location: 'Modena, Italia',
-            result: 'Da definire',
-            status: 'past'
-        }, {
-            code: 'R03',
-            date: '2026-08-02',
-            track: 'Autodromo di Viterbo',
-            location: 'Viterbo, Italia',
-            result: 'Da definire',
-            status: 'past'
-        }, {
-            code: 'R04',
-            date: '2026-08-30',
-            track: 'Autodromo di Modena',
-            location: 'Modena, Italia',
-            result: 'Da definire',
-            status: 'past'
-        }, {
-            code: 'R05',
-            date: '2026-09-27',
-            track: 'Autodromo di Varano',
-            location: 'Varano de\' Melegari (PR), Italia',
-            result: 'Da definire',
-            status: 'past'
-        }];
+        (function() {
+            'use strict';
 
-        // ===== FUNZIONE PER DETERMINARE LO STATUS IN BASE ALLA DATA =====
-        function getRaceStatus(dateStr) {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            const raceDate = new Date(dateStr);
-            raceDate.setHours(0, 0, 0, 0);
+            // — Hamburger toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
 
-            if (raceDate < today) return 'past';
-            if (raceDate.getTime() === today.getTime()) return 'current';
-            return 'upcoming';
-        }
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('open');
+                });
 
-        // ===== RENDER CARDS =====
-        function renderCalendar() {
-            const grid = document.getElementById('calendarGrid');
-            grid.innerHTML = '';
+                document.querySelectorAll('.nav-links a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('open');
+                    });
+                });
+            }
 
-            races.forEach((race, index) => {
-                // Determina lo status reale
-                const realStatus = getRaceStatus(race.date);
-                let displayStatus = realStatus;
+            // — Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            let ticking = false;
 
-                // Se la data è passata e il risultato non è ancora definito, possiamo mostrare "Risultato" o "Da definire"
-                // Per le gare passate mostriamo "Risultato" come badge, per le altre "Prossima" o "In programma"
-                const isPast = displayStatus === 'past';
-                const isCurrent = displayStatus === 'current';
-                const isUpcoming = displayStatus === 'upcoming';
+            if (navbar) {
+                window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function() {
+                            if (window.scrollY > 60) {
+                                navbar.classList.add('scrolled');
+                            } else {
+                                navbar.classList.remove('scrolled');
+                            }
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+            }
 
-                // Formatta la data
-                const dateObj = new Date(race.date);
-                const day = String(dateObj.getDate()).padStart(2, '0');
-                const month = dateObj.toLocaleString('it-IT', { month: 'short' }).toUpperCase();
-                const formattedDate = `${day} ${month}`;
-
-                // Badge result
-                let resultText = race.result;
-                let resultClass = '';
-
-                if (isPast) {
-                    // Per le gare passate possiamo usare un risultato fittizio o lasciare "Da definire"
-                    // Qui mettiamo "Risultato" ma potremmo anche mostrare un piazzamento se disponibile
-                    // Per ora mostriamo "Risultato" come indicazione
-                    resultText = 'Risultato';
-                    resultClass = 'past-result';
-                } else if (isCurrent) {
-                    resultText = 'Prossima';
-                    resultClass = 'current-result';
-                } else {
-                    resultText = 'In programma';
-                    resultClass = 'upcoming-result';
+            // ===== DATI GARE CON RISULTATI SPECIFICI =====
+            const races = [{
+                code: 'R01',
+                date: '2026-05-24',
+                track: "Autodromo dell'Umbria",
+                location: 'Magione (PG), Italia',
+                results: {
+                    dario: { g1: 'P8', g2: 'P12' },
+                    christian: { g1: 'P5', g2: 'P5' }
                 }
-
-                // Status label
-                let statusLabel = '';
-                let statusLabelClass = '';
-                if (isPast) {
-                    statusLabel = 'Già corsa';
-                    statusLabelClass = '';
-                } else if (isCurrent) {
-                    statusLabel = 'Oggi!';
-                    statusLabelClass = 'current-label';
-                } else {
-                    statusLabel = 'In programma';
-                    statusLabelClass = '';
+            }, {
+                code: 'R02',
+                date: '2026-06-21',
+                track: 'Autodromo di Modena',
+                location: 'Modena, Italia',
+                results: {
+                    dario: { g1: 'P13', g2: 'P21' },
+                    christian: { g1: 'P9', g2: 'P7' }
                 }
+            }, {
+                code: 'R03',
+                date: '2026-08-02',
+                track: 'Autodromo di Viterbo',
+                location: 'Viterbo, Italia',
+                results: null // ancora da correre
+            }, {
+                code: 'R04',
+                date: '2026-08-30',
+                track: 'Autodromo di Modena',
+                location: 'Modena, Italia',
+                results: null
+            }, {
+                code: 'R05',
+                date: '2026-09-27',
+                track: 'Autodromo di Varano',
+                location: "Varano de' Melegari (PR), Italia",
+                results: null
+            }];
 
-                // Classe per la data
-                let dateClass = '';
-                if (isPast) dateClass = 'past-date';
-                else if (isCurrent) dateClass = 'current-date';
+            // — Funzione status
+            function getRaceStatus(dateStr) {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const raceDate = new Date(dateStr);
+                raceDate.setHours(0, 0, 0, 0);
 
-                // Crea la card
-                const card = document.createElement('div');
-                card.className = 'race-card';
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `opacity 0.6s ease ${index * 0.08}s, transform 0.6s ease ${index * 0.08}s`;
+                if (raceDate < today) return 'past';
+                if (raceDate.getTime() === today.getTime()) return 'current';
+                return 'upcoming';
+            }
 
-                // Barra di stato
-                const statusBar = document.createElement('div');
-                statusBar.className = `status-bar ${isPast ? 'past' : isCurrent ? 'current' : 'upcoming'}`;
+            // — Render
+            function renderCalendar() {
+                const grid = document.getElementById('calendarGrid');
+                if (!grid) return;
+                grid.innerHTML = '';
 
-                card.innerHTML = `
-                            ${statusBar.outerHTML}
-                            <div class="race-top">
-                                <span class="race-code">${race.code}</span>
-                                <span class="race-date ${dateClass}">${formattedDate}</span>
-                            </div>
-                            <div class="race-name">${race.track}</div>
-                            <div class="race-location">
-                                <i class="fas fa-map-pin"></i> ${race.location}
-                            </div>
-                            <div class="race-result">
-                                <span class="result-badge ${resultClass}">${resultText}</span>
-                                <span class="status-label ${statusLabelClass}">${statusLabel}</span>
+                races.forEach(function(race, index) {
+                    const status = getRaceStatus(race.date);
+                    const isPast = status === 'past';
+                    const isCurrent = status === 'current';
+                    const isUpcoming = status === 'upcoming';
+
+                    const dateObj = new Date(race.date);
+                    const day = String(dateObj.getDate()).padStart(2, '0');
+                    const month = dateObj.toLocaleString('it-IT', { month: 'short' }).toUpperCase();
+                    const formattedDate = day + ' ' + month;
+
+                    let dateClass = 'past-date';
+                    let barClass = 'past';
+
+                    if (isCurrent) {
+                        dateClass = 'current-date';
+                        barClass = 'current';
+                    } else if (isUpcoming) {
+                        dateClass = '';
+                        barClass = 'upcoming';
+                    }
+
+                    // Costruisce la card
+                    let resultsHTML = '';
+
+                    if (isPast && race.results) {
+                        // Mostra i risultati specifici
+                        resultsHTML = `
+                            <div class="race-results-detail">
+                                <div class="result-label">
+                                    <span class="g1-label">● Gara 1</span>
+                                    <span style="margin:0 0.5rem;color:#333;">|</span>
+                                    <span class="g2-label">● Gara 2</span>
+                                </div>
+                                <div class="result-row">
+                                    <span class="pilot-name">Dario</span>
+                                    <span class="pilot-results">
+                                        <span class="g1">${race.results.dario.g1}</span>
+                                        <span style="color:#444;">/</span>
+                                        <span class="g2">${race.results.dario.g2}</span>
+                                    </span>
+                                </div>
+                                <div class="result-row">
+                                    <span class="pilot-name">Christian</span>
+                                    <span class="pilot-results">
+                                        <span class="g1">${race.results.christian.g1}</span>
+                                        <span style="color:#444;">/</span>
+                                        <span class="g2">${race.results.christian.g2}</span>
+                                    </span>
+                                </div>
                             </div>
                         `;
+                    } else if (isUpcoming || isCurrent) {
+                        resultsHTML = `
+                            <div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05);">
+                                <span class="status-upcoming">${isCurrent ? '⏳ Prossima' : '📅 In programma'}</span>
+                            </div>
+                        `;
+                    } else {
+                        // Fallback (non dovrebbe succedere)
+                        resultsHTML = `
+                            <div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05); color:#666; font-size:0.8rem;">
+                                Risultati non disponibili
+                            </div>
+                        `;
+                    }
 
-                grid.appendChild(card);
+                    const card = document.createElement('div');
+                    card.className = 'race-card';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.5s ease ' + (index * 0.06) + 's, transform 0.5s ease ' + (index *
+                        0.06) + 's';
 
-                // Reveal animato
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 150 + index * 80);
-            });
-        }
+                    card.innerHTML =
+                        '<div class="status-bar ' + barClass + '"></div>' +
+                        '<div class="race-top">' +
+                        '  <span class="race-code">' + race.code + '</span>' +
+                        '  <span class="race-date ' + dateClass + '">' + formattedDate + '</span>' +
+                        '</div>' +
+                        '<div class="race-name">' + race.track + '</div>' +
+                        '<div class="race-location"><i class="fas fa-map-pin"></i> ' + race.location + '</div>' +
+                        resultsHTML;
 
-        // ===== HAMBURGER =====
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+                    grid.appendChild(card);
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('open');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('open');
-            });
-        });
-
-        // ===== NAVBAR SCROLL =====
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 60) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+                    setTimeout(function() {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100 + index * 60);
+                });
             }
-        });
 
-        // ===== INIT =====
-        document.addEventListener('DOMContentLoaded', renderCalendar);
+            document.addEventListener('DOMContentLoaded', renderCalendar);
+
+        })();
     </script>
 </body>
 </html>
