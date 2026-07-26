@@ -44,6 +44,10 @@
         a {
             text-decoration: none;
             color: inherit;
+            /* Disabilita la selezione del testo su tutti i link */
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
         }
 
         ul {
@@ -301,7 +305,7 @@
             align-items: center;
         }
 
-        /* ===== PULSANTI OTTIMIZZATI PER IL TOUCH (fix per la scritta) ===== */
+        /* ===== PULSANTI OTTIMIZZATI PER TOUCH ===== */
         .btn-primary,
         .btn-secondary {
             display: inline-flex;
@@ -322,18 +326,22 @@
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
             position: relative;
-            /* garantisce che il link sia il target */
             z-index: 1;
+            /* Disabilita la selezione del testo */
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
         }
 
-        /* Il contenuto interno non deve intercettare il click */
+        /* Il contenuto interno non deve intercettare il click o la selezione */
         .btn-primary span,
         .btn-secondary span {
             pointer-events: none;
-            /* fondamentale per evitare che la scritta/icona intercettino il tocco */
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .btn-primary {
@@ -543,6 +551,9 @@
             transition: all 0.3s ease;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
         }
 
         .social-bar a:hover {
