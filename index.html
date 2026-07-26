@@ -127,7 +127,6 @@
             color: #b0b0b0;
             transition: color 0.3s ease;
             position: relative;
-            /* Migliora l'area di tocco per i link del menu */
             padding: 0.4rem 0.2rem;
         }
 
@@ -302,7 +301,7 @@
             align-items: center;
         }
 
-        /* ===== PULSANTI OTTIMIZZATI PER TOUCH ===== */
+        /* ===== PULSANTI OTTIMIZZATI PER IL TOUCH (fix per la scritta) ===== */
         .btn-primary,
         .btn-secondary {
             display: inline-flex;
@@ -318,12 +317,23 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
-            /* Aumenta l'area di tocco */
             min-height: 54px;
             min-width: 180px;
             touch-action: manipulation;
-            /* evita il delay del click su mobile */
             -webkit-tap-highlight-color: transparent;
+            position: relative;
+            /* garantisce che il link sia il target */
+            z-index: 1;
+        }
+
+        /* Il contenuto interno non deve intercettare il click */
+        .btn-primary span,
+        .btn-secondary span {
+            pointer-events: none;
+            /* fondamentale per evitare che la scritta/icona intercettino il tocco */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
         .btn-primary {
@@ -531,7 +541,6 @@
             color: #aaa;
             font-size: 1.2rem;
             transition: all 0.3s ease;
-            /* Migliora il touch sulle icone social */
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
         }
@@ -580,7 +589,6 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
-            /* Migliora il touch sui link del footer */
             padding: 0.4rem 0.2rem;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
@@ -701,7 +709,6 @@
                 width: 100%;
             }
 
-            /* I pulsanti su mobile occupano tutta la larghezza disponibile */
             .btn-primary,
             .btn-secondary {
                 width: 100%;
@@ -728,7 +735,6 @@
                 padding: 1rem 1rem 0.8rem;
             }
 
-            /* Aumento il padding dei link del menu mobile per tocco più facile */
             .nav-links a {
                 padding: 0.6rem 0.2rem;
                 font-size: 0.9rem;
@@ -775,10 +781,10 @@
                 </p>
                 <div class="hero-actions">
                     <a href="./Team.html" class="btn-primary">
-                        Scopri il team <i class="fas fa-arrow-right"></i>
+                        <span><i class="fas fa-arrow-right"></i> Scopri il team</span>
                     </a>
                     <a href="./Calendario.html" class="btn-secondary">
-                        <i class="fas fa-calendar-alt"></i> Calendario
+                        <span><i class="fas fa-calendar-alt"></i> Calendario</span>
                     </a>
                 </div>
             </div>
@@ -880,7 +886,7 @@
                 });
             }
 
-            // — Navbar scroll effect (ottimizzato)
+            // — Navbar scroll effect
             var navbar = document.getElementById('navbar');
             var ticking = false;
 
@@ -910,7 +916,7 @@
                 });
             });
 
-            // — Scroll reveal (solo per l'effetto fade-in)
+            // — Scroll reveal
             var revealElements = document.querySelectorAll('.gallery-card, .hero-content, .hero-visual, .social-bar');
 
             if ('IntersectionObserver' in window) {
@@ -945,7 +951,7 @@
                 });
             }
 
-            // — Solo per il link "Home" nel menu: scroll smooth se già in home
+            // — Home link smooth scroll
             document.querySelectorAll('.nav-links a[href="./"]').forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     var path = window.location.pathname;
@@ -953,7 +959,6 @@
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
-                    // se siamo su un'altra pagina, il link funziona normalmente
                 });
             });
 
