@@ -5,36 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FP Corse – Squadra corse moto | CIV Junior 2026</title>
     <meta name="description" content="Team italiano di motociclismo, specializzato nella crescita di giovani piloti. Scopri il calendario, i piloti e i risultati del CIV Junior 2026." />
-    <meta name="keywords" content="FP Corse, squadra corse moto, CIV Junior, motociclismo, piloti giovani, Dario Scibilia, Christian Bianchi" />
     <link rel="canonical" href="https://rodeghierof.github.io/fpcorse/" />
-
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="FP Corse – Squadra corse moto | CIV Junior 2026" />
-    <meta property="og:description" content="Team italiano di motociclismo, specializzato nella crescita di giovani piloti. Scopri il calendario, i piloti e i risultati del CIV Junior 2026." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rodeghierof.github.io/fpcorse/" />
-    <meta property="og:image" content="https://rodeghierof.github.io/fpcorse/images/logofpcorsetagliomaglia.png" />
-
-    <!-- Schema markup per il team sportivo -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "SportsTeam",
-            "name": "FP Corse",
-            "sport": "Motociclismo",
-            "url": "https://rodeghierof.github.io/fpcorse/",
-            "logo": "https://rodeghierof.github.io/fpcorse/images/logofpcorsetagliomaglia.png",
-            "foundingDate": "2009",
-            "location": {
-                "@type": "Place",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Vicenza",
-                    "addressCountry": "IT"
-                }
-            }
-        }
-    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -760,9 +731,9 @@
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="./" class="active">Home</a></li>
-                <li><a href="Calendario.html">Calendario</a></li>
-                <li><a href="Team.html">Team</a></li>
-                <li><a href="Stagione-2026.html">Stagione 2026</a></li>
+                <li><a href="./Calendario.html">Calendario</a></li>
+                <li><a href="./Team.html">Team</a></li>
+                <li><a href="./Stagione-2026.html">Stagione 2026</a></li>
                 <li><a href="#contatti" class="btn-cta">Contatti</a></li>
             </ul>
 
@@ -785,10 +756,10 @@
                     Passione, velocità e determinazione: il nostro motore.
                 </p>
                 <div class="hero-actions">
-                    <a href="Team.html" class="btn-primary">
+                    <a href="./Team.html" class="btn-primary">
                         Scopri il team <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="Calendario.html" class="btn-secondary">
+                    <a href="./Calendario.html" class="btn-secondary">
                         <i class="fas fa-calendar-alt"></i> Calendario
                     </a>
                 </div>
@@ -812,7 +783,7 @@
 
             <div class="gallery-grid">
                 <!-- 2026 -->
-                <div class="gallery-card" data-href="Stagione-2026.html">
+                <div class="gallery-card" data-href="./Stagione-2026.html">
                     <img class="card-image" src="images/WhatsAppImage2026-07-20at12.56.49.jpeg" alt="Stagione 2026 CIV Junior" loading="lazy" />
                     <div class="card-overlay">
                         <span class="year-badge">Stagione 2026</span>
@@ -860,22 +831,22 @@
             <span class="footer-brand">FP Corse</span>
             <div class="footer-links">
                 <a href="./">Home</a>
-                <a href="Calendario.html">Calendario</a>
-                <a href="Team.html">Team</a>
-                <a href="Stagione-2026.html">Stagione 2026</a>
+                <a href="./Calendario.html">Calendario</a>
+                <a href="./Team.html">Team</a>
+                <a href="./Stagione-2026.html">Stagione 2026</a>
             </div>
             <p>&copy; 2026 FP Corse. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT OTTIMIZZATO ===== -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
         (function() {
             'use strict';
 
             // — Hamburger toggle
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
+            var hamburger = document.getElementById('hamburger');
+            var navLinks = document.getElementById('navLinks');
 
             if (hamburger && navLinks) {
                 hamburger.addEventListener('click', function() {
@@ -891,9 +862,9 @@
                 });
             }
 
-            // — Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-            let ticking = false;
+            // — Navbar scroll effect (ottimizzato)
+            var navbar = document.getElementById('navbar');
+            var ticking = false;
 
             if (navbar) {
                 window.addEventListener('scroll', function() {
@@ -921,7 +892,7 @@
                 });
             });
 
-            // — Scroll reveal
+            // — Scroll reveal (solo per l'effetto fade-in)
             var revealElements = document.querySelectorAll('.gallery-card, .hero-content, .hero-visual, .social-bar');
 
             if ('IntersectionObserver' in window) {
@@ -956,13 +927,15 @@
                 });
             }
 
-            // — Home link smooth scroll
+            // — Solo per il link "Home" nel menu: scroll smooth se già in home
             document.querySelectorAll('.nav-links a[href="./"]').forEach(function(link) {
                 link.addEventListener('click', function(e) {
-                    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    var path = window.location.pathname;
+                    if (path === '/' || path === '/index.html' || path === '') {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
+                    // se siamo su un'altra pagina, il link funziona normalmente
                 });
             });
 
