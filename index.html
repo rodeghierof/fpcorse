@@ -127,6 +127,8 @@
             color: #b0b0b0;
             transition: color 0.3s ease;
             position: relative;
+            /* Migliora l'area di tocco per i link del menu */
+            padding: 0.4rem 0.2rem;
         }
 
         .nav-links a::after {
@@ -300,27 +302,39 @@
             align-items: center;
         }
 
-        .btn-primary {
+        /* ===== PULSANTI OTTIMIZZATI PER TOUCH ===== */
+        .btn-primary,
+        .btn-secondary {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 2.2rem;
-            background: linear-gradient(135deg, #ff6a00, #e63900);
-            border: none;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.9rem 2.4rem;
             border-radius: 50px;
-            color: #fff;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
+            /* Aumenta l'area di tocco */
+            min-height: 54px;
+            min-width: 180px;
+            touch-action: manipulation;
+            /* evita il delay del click su mobile */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6a00, #e63900);
+            border: none;
+            color: #fff;
             box-shadow: 0 4px 30px rgba(230, 57, 0, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 8px 40px rgba(230, 57, 0, 0.5);
         }
 
@@ -333,27 +347,15 @@
         }
 
         .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.8rem;
             background: rgba(255, 255, 255, 0.08);
             border: 1.5px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
             color: #fff;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
             border-color: #ff6a00;
             background: rgba(230, 57, 0, 0.15);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         /* Hero visual */
@@ -529,6 +531,9 @@
             color: #aaa;
             font-size: 1.2rem;
             transition: all 0.3s ease;
+            /* Migliora il touch sulle icone social */
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .social-bar a:hover {
@@ -575,6 +580,10 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
+            /* Migliora il touch sui link del footer */
+            padding: 0.4rem 0.2rem;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .footer .footer-links a:hover {
@@ -692,10 +701,13 @@
                 width: 100%;
             }
 
-            .hero-actions .btn-primary,
-            .hero-actions .btn-secondary {
+            /* I pulsanti su mobile occupano tutta la larghezza disponibile */
+            .btn-primary,
+            .btn-secondary {
                 width: 100%;
                 justify-content: center;
+                min-height: 54px;
+                padding: 0.9rem 1.5rem;
             }
 
             .hero {
@@ -714,6 +726,12 @@
 
             .gallery-card .card-overlay {
                 padding: 1rem 1rem 0.8rem;
+            }
+
+            /* Aumento il padding dei link del menu mobile per tocco più facile */
+            .nav-links a {
+                padding: 0.6rem 0.2rem;
+                font-size: 0.9rem;
             }
         }
     </style>
