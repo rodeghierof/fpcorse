@@ -4,106 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendario CIV Junior 2026 – FP Corse</title>
-    <meta name="description" content="Tutte le gare del CIV Junior 2026: date, circuiti e risultati di Dario Scibilia e Christian Bianchi. Scopri il calendario di FP Corse." />
-    <meta name="keywords" content="Calendario CIV Junior 2026, FP Corse, gare moto, Magione, Modena, Viterbo, Varano" />
+    <meta name="description" content="Tutte le gare del CIV Junior 2026: date, circuiti e risultati di Dario Scibilia e Christian Bianchi." />
     <link rel="canonical" href="https://rodeghierof.github.io/fpcorse/Calendario.html" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Calendario CIV Junior 2026 – FP Corse" />
-    <meta property="og:description" content="Tutte le gare del CIV Junior 2026: date, circuiti e risultati di Dario Scibilia e Christian Bianchi." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rodeghierof.github.io/fpcorse/Calendario.html" />
-    <meta property="og:image" content="https://rodeghierof.github.io/fpcorse/images/logofpcorsetagliomaglia.png" />
-
-    <!-- Schema markup per il calendario (eventi) -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "Calendario CIV Junior 2026",
-            "description": "Elenco delle gare del CIV Junior 2026 a cui partecipa FP Corse.",
-            "itemListElement": [{
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                    "@type": "Event",
-                    "name": "Round 1 CIV Junior - Magione",
-                    "startDate": "2026-05-24",
-                    "location": {
-                        "@type": "Place",
-                        "name": "Autodromo dell'Umbria",
-                        "address": "Magione, Italia"
-                    }
-                }
-            }, {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                    "@type": "Event",
-                    "name": "Round 2 CIV Junior - Modena",
-                    "startDate": "2026-06-21",
-                    "location": {
-                        "@type": "Place",
-                        "name": "Autodromo di Modena",
-                        "address": "Modena, Italia"
-                    }
-                }
-            }, {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                    "@type": "Event",
-                    "name": "Round 3 CIV Junior - Viterbo",
-                    "startDate": "2026-08-02",
-                    "location": {
-                        "@type": "Place",
-                        "name": "Autodromo di Viterbo",
-                        "address": "Viterbo, Italia"
-                    }
-                }
-            }, {
-                "@type": "ListItem",
-                "position": 4,
-                "item": {
-                    "@type": "Event",
-                    "name": "Round 4 CIV Junior - Modena",
-                    "startDate": "2026-08-30",
-                    "location": {
-                        "@type": "Place",
-                        "name": "Autodromo di Modena",
-                        "address": "Modena, Italia"
-                    }
-                }
-            }, {
-                "@type": "ListItem",
-                "position": 5,
-                "item": {
-                    "@type": "Event",
-                    "name": "Round 5 CIV Junior - Varano",
-                    "startDate": "2026-09-27",
-                    "location": {
-                        "@type": "Place",
-                        "name": "Autodromo di Varano",
-                        "address": "Varano de' Melegari, Italia"
-                    }
-                }
-            }]
-        }
-    </script>
-
-    <!-- Google Fonts -->
+    <!-- Google Fonts con font-display: swap per non bloccare -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.png" />
 
     <style>
-        /* (stile identico alla versione già ottimizzata, solo aggiunti heading) */
+        /* ========== RESET & BASE ========== */
         *,
         *::before,
         *::after {
@@ -120,18 +33,20 @@
             font-family: 'Rajdhani', sans-serif;
             background: #0a0a0a;
             color: #f0f0f0;
-            overflow-x: hidden;
             line-height: 1.6;
             min-height: 100vh;
+            padding-top: 70px;
         }
 
         a {
             text-decoration: none;
             color: inherit;
         }
+
         ul {
             list-style: none;
         }
+
         img {
             max-width: 100%;
             display: block;
@@ -140,123 +55,84 @@
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
-        @media (min-width: 768px) {
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            ::-webkit-scrollbar-track {
-                background: #1a1a1a;
-            }
-            ::-webkit-scrollbar-thumb {
-                background: #e63900;
-                border-radius: 10px;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-                background: #cc3300;
-            }
-        }
-
-        /* NAVBAR identica alla home */
+        /* ========== NAVBAR (semplice e leggera) ========== */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 0.8rem 0;
-            background: rgba(10, 10, 10, 0.9);
+            padding: 0.7rem 0;
+            background: rgba(10, 10, 10, 0.95);
             border-bottom: 1px solid rgba(230, 57, 0, 0.15);
-            transition: background 0.3s ease;
         }
-        .navbar.scrolled {
-            background: rgba(10, 10, 10, 0.96);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
-        }
+
         .navbar .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
         }
-        .logo-wrap {
-            display: flex;
-            align-items: center;
-        }
+
         .logo-wrap img {
-            height: 42px;
+            height: 38px;
             width: auto;
+            display: block;
         }
+
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 1.8rem;
+            gap: 1.2rem;
         }
+
         .nav-links a {
             font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 1.2px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: #b0b0b0;
-            transition: color 0.3s ease;
-            position: relative;
+            transition: color 0.2s;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #ff6a00, #e63900);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover {
-            color: #fff;
-        }
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
+
+        .nav-links a:hover,
         .nav-links a.active {
             color: #fff;
         }
+
         .nav-links .btn-cta {
             background: linear-gradient(135deg, #ff6a00, #e63900);
             color: #fff !important;
-            padding: 0.4rem 1.6rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 50px;
             font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 24px rgba(230, 57, 0, 0.3);
-        }
-        .nav-links .btn-cta::after {
-            display: none;
-        }
-        .nav-links .btn-cta:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 36px rgba(230, 57, 0, 0.5);
-            color: #fff !important;
         }
 
+        .nav-links .btn-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
             padding: 4px;
-            z-index: 1001;
         }
+
         .hamburger span {
             display: block;
-            width: 28px;
+            width: 26px;
             height: 3px;
             background: #f0f0f0;
             border-radius: 4px;
             transition: all 0.3s ease;
         }
+
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
@@ -267,79 +143,124 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* PAGE HEADER */
+        /* ========== PAGE HEADER ========== */
         .page-header {
-            padding: 8rem 0 2.5rem;
+            padding: 2rem 0 1.5rem;
             text-align: center;
-            position: relative;
         }
+
         .page-header .tag {
             display: inline-block;
             font-family: 'Orbitron', sans-serif;
             font-weight: 600;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #ff6a00;
             background: rgba(230, 57, 0, 0.08);
-            padding: 0.3rem 1.2rem;
+            padding: 0.2rem 1rem;
             border-radius: 50px;
             border: 1px solid rgba(230, 57, 0, 0.1);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
         }
+
         .page-header h1 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
-            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
             text-transform: uppercase;
             letter-spacing: 2px;
             line-height: 1.1;
         }
+
         .page-header h1 .highlight {
             background: linear-gradient(135deg, #ff6a00, #e63900);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .page-header p {
             color: #999;
-            max-width: 600px;
-            margin: 0.6rem auto 0;
-            font-size: 1rem;
+            max-width: 500px;
+            margin: 0.4rem auto 0;
+            font-size: 0.95rem;
         }
 
-        /* CALENDARIO GRID */
-        .calendar-section {
-            padding: 0.5rem 0 3rem;
+        /* ========== LEGENDA ========== */
+        .legend-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 0.8rem 0 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 1.5rem;
         }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .legend-item .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .legend-item .dot.past-dot {
+            background: #555;
+        }
+        .legend-item .dot.current-dot {
+            background: linear-gradient(135deg, #ff6a00, #e63900);
+        }
+        .legend-item .dot.upcoming-dot {
+            background: #ff6a00;
+        }
+
+        /* ========== CALENDARIO GRID ========== */
+        .calendar-section {
+            padding: 0 0 2rem;
+        }
+
         .calendar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
         }
 
         .race-card {
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            padding: 1.5rem 1.5rem 1.2rem;
+            border-radius: 14px;
+            padding: 1.2rem 1.2rem 1rem;
             border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.2s ease;
             position: relative;
         }
+
         .race-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: rgba(230, 57, 0, 0.2);
         }
 
+        /* Barra laterale di stato */
         .race-card .status-bar {
             position: absolute;
             top: 0;
             left: 0;
             bottom: 0;
             width: 4px;
-            border-radius: 16px 0 0 16px;
-            transition: all 0.3s ease;
+            border-radius: 14px 0 0 14px;
         }
+
         .race-card .status-bar.past {
             background: #555;
         }
@@ -354,36 +275,37 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 0.3rem;
             flex-wrap: wrap;
-            gap: 0.4rem;
+            gap: 0.3rem;
         }
+
         .race-card .race-code {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 1.6rem;
-            color: rgba(255, 255, 255, 0.07);
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.06);
             line-height: 1;
             letter-spacing: 1px;
         }
+
         .race-card .race-date {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: #ff6a00;
             background: rgba(230, 57, 0, 0.1);
-            padding: 0.15rem 0.8rem;
+            padding: 0.1rem 0.7rem;
             border-radius: 50px;
-            letter-spacing: 0.5px;
             border: 1px solid rgba(230, 57, 0, 0.08);
             white-space: nowrap;
         }
+
         .race-card .race-date.past-date {
             color: #666;
             background: rgba(255, 255, 255, 0.04);
             border-color: rgba(255, 255, 255, 0.04);
         }
+
         .race-card .race-date.current-date {
             color: #fff;
             background: rgba(230, 57, 0, 0.25);
@@ -391,275 +313,263 @@
         }
 
         .race-card .race-name {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 0.05rem;
-            position: relative;
-            z-index: 2;
         }
+
         .race-card .race-location {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #999;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            position: relative;
-            z-index: 2;
-        }
-        .race-card .race-location i {
-            color: #ff6a00;
-            font-size: 0.7rem;
+            gap: 0.3rem;
         }
 
+        .race-card .race-location span {
+            color: #ff6a00;
+        }
+
+        /* ===== RISULTATI ===== */
         .race-card .race-results-detail {
-            margin-top: 0.8rem;
-            padding-top: 0.8rem;
+            margin-top: 0.6rem;
+            padding-top: 0.6rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            z-index: 2;
         }
-        .race-card .race-results-detail .result-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            padding: 0.15rem 0;
-            color: #bbb;
-        }
-        .race-card .race-results-detail .result-row .pilot-name {
-            font-weight: 600;
-            color: #ddd;
-            min-width: 70px;
-        }
-        .race-card .race-results-detail .result-row .pilot-results {
-            display: flex;
-            gap: 0.8rem;
-            font-weight: 500;
-        }
-        .race-card .race-results-detail .result-row .pilot-results .g1 {
-            color: #66ccff;
-        }
-        .race-card .race-results-detail .result-row .pilot-results .g2 {
-            color: #ffaa00;
-        }
+
         .race-card .race-results-detail .result-label {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #666;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
         }
+
         .race-card .race-results-detail .result-label .g1-label {
             color: #66ccff;
         }
         .race-card .race-results-detail .result-label .g2-label {
             color: #ffaa00;
         }
+
+        .race-card .race-results-detail .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            padding: 0.1rem 0;
+            color: #bbb;
+        }
+
+        .race-card .race-results-detail .result-row .pilot-name {
+            font-weight: 600;
+            color: #ddd;
+            min-width: 65px;
+        }
+
+        .race-card .race-results-detail .result-row .pilot-results {
+            display: flex;
+            gap: 0.6rem;
+            font-weight: 500;
+        }
+
+        .race-card .race-results-detail .result-row .pilot-results .g1 {
+            color: #66ccff;
+        }
+
+        .race-card .race-results-detail .result-row .pilot-results .g2 {
+            color: #ffaa00;
+        }
+
         .race-card .status-upcoming {
             display: inline-block;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #ffaa00;
             background: rgba(255, 170, 0, 0.08);
-            padding: 0.15rem 0.8rem;
+            padding: 0.1rem 0.7rem;
             border-radius: 50px;
             border: 1px solid rgba(255, 170, 0, 0.1);
-            margin-top: 0.6rem;
+            margin-top: 0.4rem;
         }
 
-        /* LEGENDA */
-        .legend-bar {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            padding: 1.2rem 0 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            margin-bottom: 2rem;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .legend-item .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .legend-item .dot.past-dot {
-            background: #555;
-        }
-        .legend-item .dot.current-dot {
-            background: linear-gradient(135deg, #ff6a00, #e63900);
-        }
-        .legend-item .dot.upcoming-dot {
-            background: #ff6a00;
-        }
-
-        /* SOCIAL BAR */
+        /* ========== SOCIAL BAR ========== */
         .social-bar {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            padding: 2rem 0 0.5rem;
+            gap: 1.2rem;
+            padding: 1.5rem 0 0.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 2.5rem;
+            margin-top: 2rem;
         }
+
         .social-bar a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 46px;
-            height: 46px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
             color: #aaa;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
         }
+
         .social-bar a:hover {
             background: rgba(230, 57, 0, 0.12);
             border-color: rgba(230, 57, 0, 0.25);
             color: #ff6a00;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        /* FOOTER */
+        /* ========== FOOTER ========== */
         .footer {
-            padding: 2rem 0 1.5rem;
+            padding: 1.5rem 0 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             text-align: center;
             color: #666;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
+
         .footer .footer-brand {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             letter-spacing: 2px;
             background: linear-gradient(135deg, #ff6a00, #e63900);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
+
         .footer .footer-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin: 0.5rem 0 0.6rem;
+            gap: 1.2rem;
+            margin: 0.3rem 0 0.4rem;
             flex-wrap: wrap;
         }
+
         .footer .footer-links a {
             color: #888;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
         }
+
         .footer .footer-links a:hover {
             color: #ff6a00;
         }
 
-        /* RESPONSIVE */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                padding: 1.5rem 0;
-                gap: 1rem;
+                padding: 1rem 0;
+                gap: 0.8rem;
                 background: rgba(10, 10, 10, 0.96);
                 border-top: 1px solid rgba(255, 255, 255, 0.05);
             }
+
             .nav-links.open {
                 display: flex;
             }
+
             .hamburger {
                 display: flex;
             }
-            .navbar .container {
-                flex-wrap: wrap;
-            }
+
             .logo-wrap img {
-                height: 36px;
+                height: 32px;
             }
+
+            .container {
+                padding: 0 1rem;
+            }
+
             .page-header {
-                padding: 7rem 0 2rem;
+                padding: 1.5rem 0 1rem;
             }
+
             .page-header h1 {
-                font-size: clamp(1.8rem, 5vw, 2.4rem);
+                font-size: clamp(1.5rem, 5vw, 2rem);
             }
+
             .calendar-grid {
                 grid-template-columns: 1fr;
-                gap: 1.2rem;
+                gap: 1rem;
             }
+
             .race-card {
-                padding: 1.2rem 1.2rem 1rem;
+                padding: 1rem 1rem 0.8rem;
             }
+
             .race-card .race-code {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
+
             .race-card .race-results-detail .result-row {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
                 flex-wrap: wrap;
-                gap: 0.2rem;
+                gap: 0.1rem;
             }
+
             .legend-bar {
-                gap: 1.2rem;
-                padding: 1rem 0 1.5rem;
+                gap: 1rem;
+                padding: 0.6rem 0 1.2rem;
             }
+
             .legend-item {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
+
             .social-bar {
                 gap: 1rem;
-                padding: 1.5rem 0 0.3rem;
+                padding: 1rem 0 0.3rem;
             }
+
             .social-bar a {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
+                width: 36px;
+                height: 36px;
+                font-size: 0.9rem;
             }
+
             .footer .footer-links {
                 gap: 0.8rem;
             }
         }
+
         @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-            .page-header p {
-                font-size: 0.9rem;
-            }
             .race-card .race-top {
                 flex-wrap: wrap;
-                gap: 0.3rem;
+                gap: 0.2rem;
             }
+
             .race-card .race-date {
-                font-size: 0.65rem;
-                padding: 0.1rem 0.6rem;
+                font-size: 0.6rem;
+                padding: 0.05rem 0.5rem;
             }
+
             .race-card .race-name {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
-            .race-card .race-results-detail .result-row {
-                font-size: 0.75rem;
-            }
+
             .race-card .race-results-detail .result-row .pilot-name {
-                min-width: 55px;
+                min-width: 50px;
             }
         }
     </style>
@@ -671,9 +581,10 @@
         <div class="container">
             <div class="logo-wrap">
                 <a href="./">
-                    <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse - logo" />
+                    <img src="images/logofpcorsetagliomaglia.png" alt="FP Corse" />
                 </a>
             </div>
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="./">Home</a></li>
                 <li><a href="Calendario.html" class="active">Calendario</a></li>
@@ -681,6 +592,7 @@
                 <li><a href="Stagione-2026.html">Stagione 2026</a></li>
                 <li><a href="#contatti" class="btn-cta">Contatti</a></li>
             </ul>
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -701,6 +613,8 @@
     <!-- ===== CALENDARIO ===== -->
     <section class="calendar-section">
         <div class="container">
+
+            <!-- Legenda -->
             <div class="legend-bar">
                 <span class="legend-item">
                     <span class="dot past-dot"></span> Già corsa
@@ -712,7 +626,11 @@
                     <span class="dot upcoming-dot"></span> In programma
                 </span>
             </div>
+
+            <!-- Griglia gare -->
             <div class="calendar-grid" id="calendarGrid"></div>
+
+            <!-- Social Bar -->
             <div class="social-bar">
                 <a href="https://www.facebook.com/profile.php?id=100090754430561" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
@@ -738,18 +656,21 @@
         </div>
     </footer>
 
+    <!-- ===== JAVASCRIPT SUPER-LEGGERO ===== -->
     <script>
         (function() {
             'use strict';
 
-            // Hamburger
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
+            // — Hamburger
+            var hamburger = document.getElementById('hamburger');
+            var navLinks = document.getElementById('navLinks');
+
             if (hamburger && navLinks) {
                 hamburger.addEventListener('click', function() {
                     hamburger.classList.toggle('active');
                     navLinks.classList.toggle('open');
                 });
+
                 document.querySelectorAll('.nav-links a').forEach(function(link) {
                     link.addEventListener('click', function() {
                         hamburger.classList.remove('active');
@@ -758,27 +679,8 @@
                 });
             }
 
-            // Navbar scroll
-            const navbar = document.getElementById('navbar');
-            let ticking = false;
-            if (navbar) {
-                window.addEventListener('scroll', function() {
-                    if (!ticking) {
-                        window.requestAnimationFrame(function() {
-                            if (window.scrollY > 60) {
-                                navbar.classList.add('scrolled');
-                            } else {
-                                navbar.classList.remove('scrolled');
-                            }
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                });
-            }
-
-            // Dati gare con risultati
-            const races = [{
+            // — DATI GARE
+            var races = [{
                 code: 'R01',
                 date: '2026-05-24',
                 track: "Autodromo dell'Umbria",
@@ -810,79 +712,75 @@
                 results: null
             }];
 
+            // — Funzione status
             function getRaceStatus(dateStr) {
-                const today = new Date();
+                var today = new Date();
                 today.setHours(0, 0, 0, 0);
-                const raceDate = new Date(dateStr);
+                var raceDate = new Date(dateStr);
                 raceDate.setHours(0, 0, 0, 0);
+
                 if (raceDate < today) return 'past';
                 if (raceDate.getTime() === today.getTime()) return 'current';
                 return 'upcoming';
             }
 
+            // — Formatta data
+            function formatDate(dateStr) {
+                var d = new Date(dateStr);
+                var day = String(d.getDate()).padStart(2, '0');
+                var month = d.toLocaleString('it-IT', { month: 'short' }).toUpperCase();
+                return day + ' ' + month;
+            }
+
+            // — Render
             function renderCalendar() {
-                const grid = document.getElementById('calendarGrid');
+                var grid = document.getElementById('calendarGrid');
                 if (!grid) return;
                 grid.innerHTML = '';
 
-                races.forEach(function(race, index) {
-                    const status = getRaceStatus(race.date);
-                    const isPast = status === 'past';
-                    const isCurrent = status === 'current';
-                    const isUpcoming = status === 'upcoming';
+                for (var i = 0; i < races.length; i++) {
+                    var race = races[i];
+                    var status = getRaceStatus(race.date);
+                    var isPast = status === 'past';
+                    var isCurrent = status === 'current';
+                    var isUpcoming = status === 'upcoming';
 
-                    const dateObj = new Date(race.date);
-                    const day = String(dateObj.getDate()).padStart(2, '0');
-                    const month = dateObj.toLocaleString('it-IT', { month: 'short' }).toUpperCase();
-                    const formattedDate = day + ' ' + month;
-
-                    let dateClass = 'past-date';
-                    let barClass = 'past';
+                    var dateClass = 'past-date';
+                    var barClass = 'past';
                     if (isCurrent) { dateClass = 'current-date';
                         barClass = 'current'; } else if (isUpcoming) { dateClass = '';
                         barClass = 'upcoming'; }
 
-                    let resultsHTML = '';
+                    var formattedDate = formatDate(race.date);
+
+                    var resultsHTML = '';
                     if (isPast && race.results) {
-                        resultsHTML = `
-                            <div class="race-results-detail">
-                                <div class="result-label">
-                                    <span class="g1-label">● Gara 1</span>
-                                    <span style="margin:0 0.5rem;color:#333;">|</span>
-                                    <span class="g2-label">● Gara 2</span>
-                                </div>
-                                <div class="result-row">
-                                    <span class="pilot-name">Dario</span>
-                                    <span class="pilot-results">
-                                        <span class="g1">${race.results.dario.g1}</span>
-                                        <span style="color:#444;">/</span>
-                                        <span class="g2">${race.results.dario.g2}</span>
-                                    </span>
-                                </div>
-                                <div class="result-row">
-                                    <span class="pilot-name">Christian</span>
-                                    <span class="pilot-results">
-                                        <span class="g1">${race.results.christian.g1}</span>
-                                        <span style="color:#444;">/</span>
-                                        <span class="g2">${race.results.christian.g2}</span>
-                                    </span>
-                                </div>
-                            </div>
-                        `;
+                        resultsHTML =
+                            '<div class="race-results-detail">' +
+                            '  <div class="result-label"><span class="g1-label">● Gara 1</span> <span style="margin:0 0.4rem;color:#333;">|</span> <span class="g2-label">● Gara 2</span></div>' +
+                            '  <div class="result-row"><span class="pilot-name">Dario</span><span class="pilot-results"><span class="g1">' +
+                            race.results.dario.g1 + '</span> <span style="color:#444;">/</span> <span class="g2">' +
+                            race.results.dario.g2 + '</span></span></div>' +
+                            '  <div class="result-row"><span class="pilot-name">Christian</span><span class="pilot-results"><span class="g1">' +
+                            race.results.christian.g1 + '</span> <span style="color:#444;">/</span> <span class="g2">' +
+                            race.results.christian.g2 + '</span></span></div>' +
+                            '</div>';
                     } else if (isUpcoming || isCurrent) {
                         resultsHTML =
-                            `<div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05);"><span class="status-upcoming">${isCurrent ? '⏳ Prossima' : '📅 In programma'}</span></div>`;
+                            '<div style="margin-top:0.6rem; padding-top:0.6rem; border-top:1px solid rgba(255,255,255,0.05);"><span class="status-upcoming">' +
+                            (isCurrent ? '⏳ Prossima' : '📅 In programma') + '</span></div>';
                     } else {
                         resultsHTML =
-                            `<div style="margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.05); color:#666; font-size:0.8rem;">Risultati non disponibili</div>`;
+                            '<div style="margin-top:0.6rem; padding-top:0.6rem; border-top:1px solid rgba(255,255,255,0.05); color:#666; font-size:0.75rem;">Risultati non disponibili</div>';
                     }
 
-                    const card = document.createElement('div');
+                    var card = document.createElement('div');
                     card.className = 'race-card';
                     card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    card.style.transition = 'opacity 0.5s ease ' + (index * 0.06) + 's, transform 0.5s ease ' + (index *
-                        0.06) + 's';
+                    card.style.transform = 'translateY(15px)';
+                    card.style.transition = 'opacity 0.3s ease ' + (i * 0.05) + 's, transform 0.3s ease ' + (i * 0.05) +
+                        's';
+
                     card.innerHTML =
                         '<div class="status-bar ' + barClass + '"></div>' +
                         '<div class="race-top">' +
@@ -890,18 +788,27 @@
                         '  <span class="race-date ' + dateClass + '">' + formattedDate + '</span>' +
                         '</div>' +
                         '<div class="race-name">' + race.track + '</div>' +
-                        '<div class="race-location"><i class="fas fa-map-pin"></i> ' + race.location + '</div>' +
+                        '<div class="race-location"><span>📍</span> ' + race.location + '</div>' +
                         resultsHTML;
+
                     grid.appendChild(card);
-                    setTimeout(function() {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 100 + index * 60);
-                });
+
+                    setTimeout(function(c) {
+                        c.style.opacity = '1';
+                        c.style.transform = 'translateY(0)';
+                    }, 80 + i * 50, card);
+                }
             }
 
-            document.addEventListener('DOMContentLoaded', renderCalendar);
+            // — Avvia al caricamento
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', renderCalendar);
+            } else {
+                renderCalendar();
+            }
+
         })();
     </script>
+
 </body>
 </html>
